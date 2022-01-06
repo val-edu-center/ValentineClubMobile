@@ -7,15 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4388125D51B00CA96D492BB0 /* Pods_ValentineClub_ValentineClubUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B61C710A91BB8BA6B013A729 /* Pods_ValentineClub_ValentineClubUITests.framework */; };
+		9CC9375C6379BE51483412F2 /* Pods_ValentineClubTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8614A5A67206408B62E3DCF /* Pods_ValentineClubTests.framework */; };
+		A06B2572B96D62AEFD2BE17D /* Pods_ValentineClub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73864D3A7700A20465512D8C /* Pods_ValentineClub.framework */; };
+		A32BEE3D278688E8002C4589 /* ConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32BEE3C278688E8002C4589 /* ConfirmationViewController.swift */; };
 		A35C87C6277E3230009B5788 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35C87C5277E3230009B5788 /* AppDelegate.swift */; };
 		A35C87C8277E3230009B5788 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35C87C7277E3230009B5788 /* SceneDelegate.swift */; };
-		A35C87CA277E3230009B5788 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35C87C9277E3230009B5788 /* ViewController.swift */; };
 		A35C87CD277E3230009B5788 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A35C87CB277E3230009B5788 /* Main.storyboard */; };
 		A35C87CF277E3232009B5788 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A35C87CE277E3232009B5788 /* Assets.xcassets */; };
 		A35C87D2277E3232009B5788 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A35C87D0277E3232009B5788 /* LaunchScreen.storyboard */; };
 		A35C87DD277E3232009B5788 /* ValentineClubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35C87DC277E3232009B5788 /* ValentineClubTests.swift */; };
 		A35C87E7277E3233009B5788 /* ValentineClubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35C87E6277E3233009B5788 /* ValentineClubUITests.swift */; };
 		A35C87E9277E3233009B5788 /* ValentineClubUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35C87E8277E3233009B5788 /* ValentineClubUITestsLaunchTests.swift */; };
+		A3D08784278158DD00E178E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D08779278158DD00E178E6 /* AppDelegate.swift */; };
+		A3D08785278158DE00E178E6 /* TransactionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D0877A278158DD00E178E6 /* TransactionTableViewController.swift */; };
+		A3D08786278158DE00E178E6 /* UserSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D0877B278158DD00E178E6 /* UserSelectViewController.swift */; };
+		A3D08788278158DE00E178E6 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D0877D278158DD00E178E6 /* TransactionCell.swift */; };
+		A3D08789278158DE00E178E6 /* TransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D0877E278158DD00E178E6 /* TransactionViewController.swift */; };
+		A3D0878A278158DE00E178E6 /* WithdrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D0877F278158DD00E178E6 /* WithdrawViewController.swift */; };
+		A3D0878B278158DE00E178E6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D08780278158DD00E178E6 /* LoginViewController.swift */; };
+		A3D0878C278158DE00E178E6 /* BankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D08781278158DD00E178E6 /* BankViewController.swift */; };
+		A3D0878D278158DE00E178E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D08782278158DD00E178E6 /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,10 +48,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		31C3E380A92E59762D5426AC /* Pods-ValentineClub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ValentineClub.debug.xcconfig"; path = "Target Support Files/Pods-ValentineClub/Pods-ValentineClub.debug.xcconfig"; sourceTree = "<group>"; };
+		3F20265AAF6ED6B38C71A397 /* Pods-ValentineClub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ValentineClub.release.xcconfig"; path = "Target Support Files/Pods-ValentineClub/Pods-ValentineClub.release.xcconfig"; sourceTree = "<group>"; };
+		53C32414DF973A6F2BE5C178 /* Pods-ValentineClubTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ValentineClubTests.debug.xcconfig"; path = "Target Support Files/Pods-ValentineClubTests/Pods-ValentineClubTests.debug.xcconfig"; sourceTree = "<group>"; };
+		571299777FF68B7A8980D3B6 /* Pods-ValentineClub-ValentineClubUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ValentineClub-ValentineClubUITests.release.xcconfig"; path = "Target Support Files/Pods-ValentineClub-ValentineClubUITests/Pods-ValentineClub-ValentineClubUITests.release.xcconfig"; sourceTree = "<group>"; };
+		73864D3A7700A20465512D8C /* Pods_ValentineClub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ValentineClub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BB8E4EEE9219277FC560DAF /* Pods-ValentineClubTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ValentineClubTests.release.xcconfig"; path = "Target Support Files/Pods-ValentineClubTests/Pods-ValentineClubTests.release.xcconfig"; sourceTree = "<group>"; };
+		A32BEE3C278688E8002C4589 /* ConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationViewController.swift; sourceTree = "<group>"; };
 		A35C87C2277E3230009B5788 /* ValentineClub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ValentineClub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A35C87C5277E3230009B5788 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A35C87C7277E3230009B5788 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A35C87C9277E3230009B5788 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A35C87CC277E3230009B5788 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A35C87CE277E3232009B5788 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A35C87D1277E3232009B5788 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +67,18 @@
 		A35C87E2277E3233009B5788 /* ValentineClubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ValentineClubUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A35C87E6277E3233009B5788 /* ValentineClubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValentineClubUITests.swift; sourceTree = "<group>"; };
 		A35C87E8277E3233009B5788 /* ValentineClubUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValentineClubUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A3D08779278158DD00E178E6 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A3D0877A278158DD00E178E6 /* TransactionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionTableViewController.swift; sourceTree = "<group>"; };
+		A3D0877B278158DD00E178E6 /* UserSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSelectViewController.swift; sourceTree = "<group>"; };
+		A3D0877D278158DD00E178E6 /* TransactionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
+		A3D0877E278158DD00E178E6 /* TransactionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionViewController.swift; sourceTree = "<group>"; };
+		A3D0877F278158DD00E178E6 /* WithdrawViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WithdrawViewController.swift; sourceTree = "<group>"; };
+		A3D08780278158DD00E178E6 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A3D08781278158DD00E178E6 /* BankViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankViewController.swift; sourceTree = "<group>"; };
+		A3D08782278158DD00E178E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		A80B3F8B76E9EF5A6E6AB8EF /* Pods-ValentineClub-ValentineClubUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ValentineClub-ValentineClubUITests.debug.xcconfig"; path = "Target Support Files/Pods-ValentineClub-ValentineClubUITests/Pods-ValentineClub-ValentineClubUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B61C710A91BB8BA6B013A729 /* Pods_ValentineClub_ValentineClubUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ValentineClub_ValentineClubUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8614A5A67206408B62E3DCF /* Pods_ValentineClubTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ValentineClubTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A06B2572B96D62AEFD2BE17D /* Pods_ValentineClub.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CC9375C6379BE51483412F2 /* Pods_ValentineClubTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +102,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4388125D51B00CA96D492BB0 /* Pods_ValentineClub_ValentineClubUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15192105CB08D7E2AA46BAC6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				73864D3A7700A20465512D8C /* Pods_ValentineClub.framework */,
+				B61C710A91BB8BA6B013A729 /* Pods_ValentineClub_ValentineClubUITests.framework */,
+				D8614A5A67206408B62E3DCF /* Pods_ValentineClubTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		21A58238B200E3DF113962EC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				31C3E380A92E59762D5426AC /* Pods-ValentineClub.debug.xcconfig */,
+				3F20265AAF6ED6B38C71A397 /* Pods-ValentineClub.release.xcconfig */,
+				A80B3F8B76E9EF5A6E6AB8EF /* Pods-ValentineClub-ValentineClubUITests.debug.xcconfig */,
+				571299777FF68B7A8980D3B6 /* Pods-ValentineClub-ValentineClubUITests.release.xcconfig */,
+				53C32414DF973A6F2BE5C178 /* Pods-ValentineClubTests.debug.xcconfig */,
+				9BB8E4EEE9219277FC560DAF /* Pods-ValentineClubTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A35C87B9277E3230009B5788 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +139,8 @@
 				A35C87DB277E3232009B5788 /* ValentineClubTests */,
 				A35C87E5277E3233009B5788 /* ValentineClubUITests */,
 				A35C87C3277E3230009B5788 /* Products */,
+				21A58238B200E3DF113962EC /* Pods */,
+				15192105CB08D7E2AA46BAC6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,10 +159,19 @@
 			children = (
 				A35C87C5277E3230009B5788 /* AppDelegate.swift */,
 				A35C87C7277E3230009B5788 /* SceneDelegate.swift */,
-				A35C87C9277E3230009B5788 /* ViewController.swift */,
 				A35C87CB277E3230009B5788 /* Main.storyboard */,
 				A35C87CE277E3232009B5788 /* Assets.xcassets */,
 				A35C87D0277E3232009B5788 /* LaunchScreen.storyboard */,
+				A3D08779278158DD00E178E6 /* AppDelegate.swift */,
+				A3D08781278158DD00E178E6 /* BankViewController.swift */,
+				A3D08780278158DD00E178E6 /* LoginViewController.swift */,
+				A32BEE3C278688E8002C4589 /* ConfirmationViewController.swift */,
+				A3D08782278158DD00E178E6 /* SceneDelegate.swift */,
+				A3D0877D278158DD00E178E6 /* TransactionCell.swift */,
+				A3D0877A278158DD00E178E6 /* TransactionTableViewController.swift */,
+				A3D0877E278158DD00E178E6 /* TransactionViewController.swift */,
+				A3D0877B278158DD00E178E6 /* UserSelectViewController.swift */,
+				A3D0877F278158DD00E178E6 /* WithdrawViewController.swift */,
 				A35C87D3277E3232009B5788 /* Info.plist */,
 			);
 			path = ValentineClub;
@@ -134,9 +201,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A35C87EC277E3233009B5788 /* Build configuration list for PBXNativeTarget "ValentineClub" */;
 			buildPhases = (
+				3FA601667688601742175EF4 /* [CP] Check Pods Manifest.lock */,
 				A35C87BE277E3230009B5788 /* Sources */,
 				A35C87BF277E3230009B5788 /* Frameworks */,
 				A35C87C0277E3230009B5788 /* Resources */,
+				086CFB306B9357F3688F2787 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -151,6 +220,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A35C87EF277E3233009B5788 /* Build configuration list for PBXNativeTarget "ValentineClubTests" */;
 			buildPhases = (
+				8D9A62B8D7511C0F9B5566CD /* [CP] Check Pods Manifest.lock */,
 				A35C87D4277E3232009B5788 /* Sources */,
 				A35C87D5277E3232009B5788 /* Frameworks */,
 				A35C87D6277E3232009B5788 /* Resources */,
@@ -169,9 +239,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A35C87F2277E3233009B5788 /* Build configuration list for PBXNativeTarget "ValentineClubUITests" */;
 			buildPhases = (
+				99D588CC286EA85C82CF2AF3 /* [CP] Check Pods Manifest.lock */,
 				A35C87DE277E3233009B5788 /* Sources */,
 				A35C87DF277E3233009B5788 /* Frameworks */,
 				A35C87E0277E3233009B5788 /* Resources */,
+				8530606F8581ADCDB5A2E96D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -253,14 +325,126 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		086CFB306B9357F3688F2787 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ValentineClub/Pods-ValentineClub-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ValentineClub/Pods-ValentineClub-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ValentineClub/Pods-ValentineClub-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3FA601667688601742175EF4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ValentineClub-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8530606F8581ADCDB5A2E96D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ValentineClub-ValentineClubUITests/Pods-ValentineClub-ValentineClubUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ValentineClub-ValentineClubUITests/Pods-ValentineClub-ValentineClubUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ValentineClub-ValentineClubUITests/Pods-ValentineClub-ValentineClubUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D9A62B8D7511C0F9B5566CD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ValentineClubTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		99D588CC286EA85C82CF2AF3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ValentineClub-ValentineClubUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A35C87BE277E3230009B5788 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A35C87CA277E3230009B5788 /* ViewController.swift in Sources */,
+				A3D08784278158DD00E178E6 /* AppDelegate.swift in Sources */,
+				A3D0878C278158DE00E178E6 /* BankViewController.swift in Sources */,
 				A35C87C6277E3230009B5788 /* AppDelegate.swift in Sources */,
+				A3D08786278158DE00E178E6 /* UserSelectViewController.swift in Sources */,
+				A3D0878A278158DE00E178E6 /* WithdrawViewController.swift in Sources */,
+				A3D08789278158DE00E178E6 /* TransactionViewController.swift in Sources */,
+				A32BEE3D278688E8002C4589 /* ConfirmationViewController.swift in Sources */,
+				A3D0878D278158DE00E178E6 /* SceneDelegate.swift in Sources */,
 				A35C87C8277E3230009B5788 /* SceneDelegate.swift in Sources */,
+				A3D08788278158DE00E178E6 /* TransactionCell.swift in Sources */,
+				A3D08785278158DE00E178E6 /* TransactionTableViewController.swift in Sources */,
+				A3D0878B278158DE00E178E6 /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +618,7 @@
 		};
 		A35C87ED277E3233009B5788 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31C3E380A92E59762D5426AC /* Pods-ValentineClub.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -462,6 +647,7 @@
 		};
 		A35C87EE277E3233009B5788 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F20265AAF6ED6B38C71A397 /* Pods-ValentineClub.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -490,6 +676,7 @@
 		};
 		A35C87F0277E3233009B5788 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53C32414DF973A6F2BE5C178 /* Pods-ValentineClubTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -510,6 +697,7 @@
 		};
 		A35C87F1277E3233009B5788 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9BB8E4EEE9219277FC560DAF /* Pods-ValentineClubTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -530,6 +718,7 @@
 		};
 		A35C87F3277E3233009B5788 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A80B3F8B76E9EF5A6E6AB8EF /* Pods-ValentineClub-ValentineClubUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -548,6 +737,7 @@
 		};
 		A35C87F4277E3233009B5788 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 571299777FF68B7A8980D3B6 /* Pods-ValentineClub-ValentineClubUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

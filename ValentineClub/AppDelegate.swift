@@ -1,11 +1,11 @@
 //
 //  AppDelegate.swift
 //  ValentineClub
-//
 //  Created by Valentine Education Center on 12/30/21.
 //
 
 import UIKit
+import Parse
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,6 +14,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let appId = "pen8j01Zc3JaqVkHmMCbZud1AhOaOMeBYTpzlUhw"
+        let clientKey = "cesRVghCcjCrbhCaQLRT79dqZqyKXaAkMJJ5URF2"
+        let parseConfig = ParseClientConfiguration {
+                    $0.applicationId = appId // <- UPDATE
+                    $0.clientKey = clientKey // <- UPDATE
+                    $0.server = "https://parseapi.back4app.com"
+            }
+            Parse.initialize(with: parseConfig)
+        
         return true
     }
 
