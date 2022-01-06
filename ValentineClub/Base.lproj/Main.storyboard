@@ -344,7 +344,14 @@
                                 </constraints>
                                 <color key="tintColor" systemColor="systemBackgroundColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="+">
+                                <buttonConfiguration key="configuration" style="filled">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="+">
+                                            <attributes>
+                                                <font key="NSFont" size="36" name="Helvetica"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
                                     <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -621,11 +628,11 @@
                                     <action selector="cancel:" destination="tsZ-Ye-jIp" eventType="touchUpInside" id="s3y-vH-wNh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oza-k4-Wfo">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SEo-c8-Q3Y">
                                 <rect key="frame" x="20" y="662" width="374" height="80"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="I05-6H-xJd"/>
+                                    <constraint firstAttribute="height" constant="80" id="AWK-do-o9L"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Submit">
@@ -634,8 +641,8 @@
                                     <color key="baseBackgroundColor" name="AccentColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="submit:" destination="wtN-mg-BHy" eventType="touchUpInside" id="HLS-Yc-4zc"/>
-                                    <action selector="submitTransaction:" destination="5F5-dF-1li" eventType="touchUpInside" id="Lfr-2t-GZA"/>
+                                    <action selector="submit:" destination="d9c-mF-ZS0" eventType="touchUpInside" id="pug-lE-dGr"/>
+                                    <action selector="submitTransaction:" destination="5F5-dF-1li" eventType="touchUpInside" id="W4B-YU-1be"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -643,16 +650,16 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="DVP-B4-GAj" firstAttribute="leading" secondItem="eL8-Yp-Qke" secondAttribute="leading" constant="20" id="6Hg-Be-lxv"/>
+                            <constraint firstItem="DVP-B4-GAj" firstAttribute="top" secondItem="SEo-c8-Q3Y" secondAttribute="bottom" constant="20" id="GpB-wm-eeS"/>
+                            <constraint firstItem="SEo-c8-Q3Y" firstAttribute="leading" secondItem="eL8-Yp-Qke" secondAttribute="leading" constant="20" id="Htz-Er-dFy"/>
                             <constraint firstItem="4Ft-1g-L4D" firstAttribute="leading" secondItem="eL8-Yp-Qke" secondAttribute="leading" constant="20" id="J3J-M1-5WG"/>
                             <constraint firstItem="rF1-Lc-WRG" firstAttribute="leading" secondItem="eL8-Yp-Qke" secondAttribute="leading" constant="20" id="Vqy-3L-Jms"/>
                             <constraint firstItem="eL8-Yp-Qke" firstAttribute="bottom" secondItem="DVP-B4-GAj" secondAttribute="bottom" constant="20" id="Yr1-M6-0xq"/>
                             <constraint firstItem="eL8-Yp-Qke" firstAttribute="trailing" secondItem="4Ft-1g-L4D" secondAttribute="trailing" constant="20" id="cov-C4-BmC"/>
+                            <constraint firstItem="eL8-Yp-Qke" firstAttribute="trailing" secondItem="SEo-c8-Q3Y" secondAttribute="trailing" constant="20" id="dg7-90-G7P"/>
                             <constraint firstItem="eL8-Yp-Qke" firstAttribute="trailing" secondItem="rF1-Lc-WRG" secondAttribute="trailing" constant="20" id="i1D-iD-Hxp"/>
-                            <constraint firstItem="eL8-Yp-Qke" firstAttribute="trailing" secondItem="oza-k4-Wfo" secondAttribute="trailing" constant="20" id="jQ6-zx-nNP"/>
                             <constraint firstItem="rF1-Lc-WRG" firstAttribute="centerX" secondItem="eL8-Yp-Qke" secondAttribute="centerX" id="rW8-QM-658"/>
-                            <constraint firstItem="DVP-B4-GAj" firstAttribute="top" secondItem="oza-k4-Wfo" secondAttribute="bottom" constant="20" id="tIv-c5-yAL"/>
                             <constraint firstItem="rF1-Lc-WRG" firstAttribute="top" secondItem="eL8-Yp-Qke" secondAttribute="top" constant="20" id="u3D-23-mrF"/>
-                            <constraint firstItem="oza-k4-Wfo" firstAttribute="leading" secondItem="eL8-Yp-Qke" secondAttribute="leading" constant="20" id="vDK-ht-GPM"/>
                             <constraint firstItem="eL8-Yp-Qke" firstAttribute="trailing" secondItem="DVP-B4-GAj" secondAttribute="trailing" constant="20" id="z0F-YW-3fq"/>
                             <constraint firstItem="4Ft-1g-L4D" firstAttribute="centerY" secondItem="eL8-Yp-Qke" secondAttribute="centerY" id="zTV-Kj-l08"/>
                         </constraints>
@@ -661,13 +668,12 @@
                     <connections>
                         <outlet property="confirmationLabel" destination="4Ft-1g-L4D" id="XiS-YT-iI7"/>
                         <outlet property="promptLabel" destination="rF1-Lc-WRG" id="nLC-9o-uvE"/>
-                        <outlet property="submitButton" destination="oza-k4-Wfo" id="Bd6-Hb-oFG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qaW-l5-RHp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="tsZ-Ye-jIp" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1429" y="3731"/>
+            <point key="canvasLocation" x="1428.985507246377" y="3730.5803571428569"/>
         </scene>
     </scenes>
     <resources>
