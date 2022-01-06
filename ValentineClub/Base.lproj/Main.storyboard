@@ -623,8 +623,8 @@
                                     <color key="baseBackgroundColor" name="AccentColor"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="cancel:" destination="wtN-mg-BHy" eventType="touchUpInside" id="3R9-l4-WuK"/>
                                     <action selector="cancel:" destination="5F5-dF-1li" eventType="touchUpInside" id="5r4-IG-bvI"/>
-                                    <action selector="cancel:" destination="wtN-mg-BHy" eventType="touchUpInside" id="Q7n-Fg-ULq"/>
                                     <action selector="cancel:" destination="tsZ-Ye-jIp" eventType="touchUpInside" id="s3y-vH-wNh"/>
                                 </connections>
                             </button>
@@ -641,6 +641,7 @@
                                     <color key="baseBackgroundColor" name="AccentColor"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="submit:" destination="wtN-mg-BHy" eventType="touchUpInside" id="iH9-l4-hBc"/>
                                     <action selector="submit:" destination="d9c-mF-ZS0" eventType="touchUpInside" id="pug-lE-dGr"/>
                                     <action selector="submitTransaction:" destination="5F5-dF-1li" eventType="touchUpInside" id="W4B-YU-1be"/>
                                 </connections>
@@ -666,8 +667,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="xJi-lu-gz4"/>
                     <connections>
-                        <outlet property="confirmationLabel" destination="4Ft-1g-L4D" id="XiS-YT-iI7"/>
-                        <outlet property="promptLabel" destination="rF1-Lc-WRG" id="nLC-9o-uvE"/>
+                        <outlet property="amountLabel" destination="4Ft-1g-L4D" id="2GI-gy-AYt"/>
+                        <outlet property="promptLabel" destination="rF1-Lc-WRG" id="2Yk-dR-LLM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qaW-l5-RHp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -27,9 +27,13 @@ class UserSelectViewController: UIViewController, UIPickerViewDelegate, UIPicker
         self.userSelector.delegate = self
         self.userSelector.dataSource = self
         
+        currentUsername = PFUser.current()!.username!
         do {
             let users = try PFUser.query()!.findObjects() as! [PFUser]
-            pickerData = users.compactMap {$0.username}
+            pickerData = users.compactMap {$0.username}.filter({ username in
+                !username.elementsEqual(currentUsername)
+            })
+            selectedUser = pickerData[0]
         } catch {
             print("User retrieval error: \(error.localizedDescription)")
         }

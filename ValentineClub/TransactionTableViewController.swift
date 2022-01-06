@@ -25,7 +25,6 @@ class TransactionTableViewController: UITableViewController {
         
         do {
             try transactions = query.findObjects()
-            print(transactions)
         } catch {
             print("Transaction retrival error: \(error.localizedDescription)")
         }
