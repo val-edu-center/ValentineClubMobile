@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  ValentineClub
+//  Valentine Club App
 //
-//  Created by Valentine Education Center on 12/30/21.
+//  Created by Education Center on 4/8/21.
 //
 
 import UIKit
