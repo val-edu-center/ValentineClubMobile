@@ -39,7 +39,7 @@ class LoginViewController: UIViewController {
         let user = PFUser()
         user.username = usernameField.text
         user.password = passwordField.text
-        user.setValue(role, forKey: "role")
+        user.setValue([role], forKey: "roles")
         user.setValue(false, forKey: "isApproved")
 
         user.signUpInBackground { (success, error) in
