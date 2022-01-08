@@ -37,6 +37,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Role (Only used for Sign Up)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7uX-Yz-Zpt">
+                                <rect key="frame" x="53.5" y="450" width="216" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QeP-Xq-vWD">
                                 <rect key="frame" x="53.5" y="408" width="307" height="34"/>
                                 <constraints>
@@ -45,19 +51,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNP-gb-sCI">
-                                <rect key="frame" x="53.5" y="450" width="120" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="KO1-Vu-gLh"/>
-                                    <constraint firstAttribute="height" constant="30" id="cev-WS-rbe"/>
-                                </constraints>
-                                <state key="normal" title="Sign In">
-                                    <color key="titleColor" systemColor="labelColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="onSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hP2-1L-r7I"/>
-                                </connections>
-                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Qri-Ko-DXR">
                                 <rect key="frame" x="53.5" y="132" width="307" height="157"/>
                                 <constraints>
@@ -72,7 +65,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qr4-m4-fFf">
-                                <rect key="frame" x="240.5" y="450" width="120" height="30"/>
+                                <rect key="frame" x="240.5" y="550" width="120" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="EjV-79-yaU"/>
                                     <constraint firstAttribute="height" constant="30" id="GlF-M2-kry"/>
@@ -84,27 +77,57 @@
                                     <action selector="onSignUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gek-cf-uwr"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jBS-zM-C4N">
+                                <rect key="frame" x="53.5" y="479" width="307" height="32"/>
+                                <segments>
+                                    <segment title="Cadet"/>
+                                    <segment title="Prep"/>
+                                    <segment title="Junior"/>
+                                    <segment title="Intermediate"/>
+                                    <segment title="Teen"/>
+                                    <segment title="Staff"/>
+                                    <segment title="Director"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNP-gb-sCI">
+                                <rect key="frame" x="53.5" y="550" width="120" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="KO1-Vu-gLh"/>
+                                    <constraint firstAttribute="height" constant="30" id="cev-WS-rbe"/>
+                                </constraints>
+                                <state key="normal" title="Sign In">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="onSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hP2-1L-r7I"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="7uX-Yz-Zpt" firstAttribute="leading" secondItem="QeP-Xq-vWD" secondAttribute="leading" id="1sz-O8-sRQ"/>
+                            <constraint firstItem="7uX-Yz-Zpt" firstAttribute="top" secondItem="QeP-Xq-vWD" secondAttribute="bottom" constant="8" symbolic="YES" id="42J-WJ-wZ7"/>
+                            <constraint firstItem="jBS-zM-C4N" firstAttribute="top" secondItem="7uX-Yz-Zpt" secondAttribute="bottom" constant="8" symbolic="YES" id="8BM-pG-hFB"/>
                             <constraint firstItem="QeP-Xq-vWD" firstAttribute="trailing" secondItem="vOc-ff-d2T" secondAttribute="trailing" id="BqZ-05-DcZ"/>
                             <constraint firstItem="vOc-ff-d2T" firstAttribute="leading" secondItem="cpm-rD-e23" secondAttribute="leading" id="ESN-d9-eFQ"/>
-                            <constraint firstItem="rNP-gb-sCI" firstAttribute="top" secondItem="QeP-Xq-vWD" secondAttribute="bottom" constant="8" symbolic="YES" id="FVP-Cg-F69"/>
                             <constraint firstItem="rNP-gb-sCI" firstAttribute="leading" secondItem="cpm-rD-e23" secondAttribute="leading" id="HTQ-dA-6Y9"/>
                             <constraint firstItem="qr4-m4-fFf" firstAttribute="trailing" secondItem="vOc-ff-d2T" secondAttribute="trailing" id="Mda-jF-zK4"/>
                             <constraint firstItem="1ye-8J-4kB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="N9s-Tw-JCh"/>
                             <constraint firstItem="cpm-rD-e23" firstAttribute="top" secondItem="Qri-Ko-DXR" secondAttribute="bottom" constant="20" id="NXf-sg-vFE"/>
+                            <constraint firstItem="rNP-gb-sCI" firstAttribute="top" secondItem="jBS-zM-C4N" secondAttribute="bottom" constant="40" id="Nk5-TM-5sP"/>
                             <constraint firstItem="Qri-Ko-DXR" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Rpv-fQ-Qz1"/>
                             <constraint firstItem="qr4-m4-fFf" firstAttribute="centerY" secondItem="rNP-gb-sCI" secondAttribute="centerY" id="S4W-hs-xgu"/>
                             <constraint firstItem="1ye-8J-4kB" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="TKR-Ni-OlZ"/>
                             <constraint firstItem="vOc-ff-d2T" firstAttribute="top" secondItem="cpm-rD-e23" secondAttribute="bottom" constant="7.5" id="Y8s-eJ-weN"/>
+                            <constraint firstItem="jBS-zM-C4N" firstAttribute="trailing" secondItem="QeP-Xq-vWD" secondAttribute="trailing" id="Zmh-J5-leB"/>
                             <constraint firstItem="Qri-Ko-DXR" firstAttribute="top" secondItem="1ye-8J-4kB" secondAttribute="bottom" constant="20" id="eTi-0A-Mpt"/>
                             <constraint firstItem="wIV-Yl-mY1" firstAttribute="leading" secondItem="cpm-rD-e23" secondAttribute="leading" id="fZk-rk-HTL"/>
                             <constraint firstItem="vOc-ff-d2T" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gCJ-vA-CAq"/>
                             <constraint firstItem="wIV-Yl-mY1" firstAttribute="top" secondItem="vOc-ff-d2T" secondAttribute="bottom" constant="8" symbolic="YES" id="hua-Fd-RWq"/>
                             <constraint firstItem="QeP-Xq-vWD" firstAttribute="top" secondItem="wIV-Yl-mY1" secondAttribute="bottom" constant="8" symbolic="YES" id="iuF-i1-3Nk"/>
                             <constraint firstItem="QeP-Xq-vWD" firstAttribute="leading" secondItem="cpm-rD-e23" secondAttribute="leading" id="oiY-Df-yAv"/>
+                            <constraint firstItem="jBS-zM-C4N" firstAttribute="leading" secondItem="QeP-Xq-vWD" secondAttribute="leading" id="zUN-Rk-rXk"/>
                         </constraints>
                     </view>
                     <connections>
