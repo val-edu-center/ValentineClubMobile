@@ -132,6 +132,7 @@
                     </view>
                     <connections>
                         <outlet property="passwordField" destination="QeP-Xq-vWD" id="YlL-zx-A4K"/>
+                        <outlet property="roleSegment" destination="jBS-zM-C4N" id="chE-by-m9G"/>
                         <outlet property="usernameField" destination="vOc-ff-d2T" id="Ylo-zp-xkx"/>
                         <segue destination="mSp-Zq-0B2" kind="presentation" identifier="loginSegue" modalPresentationStyle="fullScreen" id="Qbr-Ot-saM"/>
                     </connections>
