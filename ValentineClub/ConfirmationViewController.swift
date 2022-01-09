@@ -78,6 +78,10 @@ class ConfirmationViewController: UIViewController {
               print("Account update error: \(error?.localizedDescription)")
           }
         }
+        
+        if (selectedUser != nil) {
+            
+        }
     }
     
 //    @IBAction func submit(_ sender: Any) {

@@ -42,6 +42,7 @@ class UserSelectViewController: UIViewController, UIPickerViewDelegate, UIPicker
     } // Number of columns of data
     
     @IBAction func submit(_ sender: Any) {
+//        let selectedUserAccount =
         let vc = storyboard?.instantiateViewController(withIdentifier: "confirmationView") as! ConfirmationViewController
         vc.transactionType = self.transactionType
         vc.transactionMultiplier = self.transactionMultiplier

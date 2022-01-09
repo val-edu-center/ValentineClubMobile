@@ -58,7 +58,7 @@ extension  TransactionTableViewController {
             } else {
                 cell.amountLabel.textColor = UIColor.systemGreen
                 cell.amountLabel.text = "+ $" + amount.description
-                cell.descriptionLabel.text = "Sent from " + targetUsername!
+                cell.descriptionLabel.text = "Sent from " + username
             }
         } else if (transactionType.elementsEqual("Withdraw")){
             cell.amountLabel.textColor = UIColor.systemRed
