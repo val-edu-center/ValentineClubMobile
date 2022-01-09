@@ -86,7 +86,6 @@
                                     <segment title="Intermediate"/>
                                     <segment title="Teen"/>
                                     <segment title="Staff"/>
-                                    <segment title="Director"/>
                                 </segments>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNP-gb-sCI">
