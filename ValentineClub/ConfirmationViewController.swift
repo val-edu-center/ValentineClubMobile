@@ -22,6 +22,7 @@ class ConfirmationViewController: UIViewController {
     public var amount: Int!
     public var newAccountBalance: Int!
     public var selectedUser: String?
+    public var selectedUserAccount: PFObject?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,8 +37,11 @@ class ConfirmationViewController: UIViewController {
     @IBAction func submit(_ sender: Any) {
         createTransaction()
         updateAccount()
-        
-        bankController.balanceLabel.text = newAccountBalance.description
+        if (selectedUserAccount != nil) {
+            updateTargetAccount()
+        }
+        bankController.balanceLabel.text = "$ " + newAccountBalance.description
+        bankController.setAccountBalance(balance: newAccountBalance)
         bankController.dismiss(animated: true, completion: nil)
     }
     
@@ -71,6 +75,24 @@ class ConfirmationViewController: UIViewController {
 
         // Saves the new object.
         userAccount.saveInBackground {
+          (success: Bool, error: Error?) in
+          if (success) {
+            // The object has been saved.
+          } else {
+              print("Account update error: \(error?.localizedDescription)")
+          }
+        }
+    }
+    
+    private func updateTargetAccount() {
+        //Assumes we are sending
+        let oldTargetAccountBalance = selectedUserAccount!["balance"] as! Int
+        let newTargetAccountBalance = oldTargetAccountBalance + amount
+        selectedUserAccount!["balance"] = newTargetAccountBalance
+
+
+        // Saves the new object.
+        selectedUserAccount!.saveInBackground {
           (success: Bool, error: Error?) in
           if (success) {
             // The object has been saved.

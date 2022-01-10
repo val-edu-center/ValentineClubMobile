@@ -51,6 +51,9 @@ class BankViewController: UIViewController {
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true, completion: nil)
     }
+    func setAccountBalance(balance: Int) {
+        self.accountBalance = balance
+    }
     
     @objc func refresh() {
         loadAccountBalance()
@@ -62,25 +65,17 @@ class BankViewController: UIViewController {
     private func loadAccountBalance() {
         let currentUser = PFUser.current()
         if currentUser != nil {
-            let query = PFQuery(className:"Accounts")
-            query.whereKey("username", equalTo: currentUser!.username!)
-            query.getFirstObjectInBackground { account, error in
-                if (account != nil) {
-                    self.accountBalance = account!["balance"] as! Int
-                    self.userAccount = account
-                } else if (error != nil){
-                    print("Account retrieval error: \(error?.localizedDescription)")
-                }
-                
-                if (self.accountBalance != nil) {
-                    self.balanceLabel.text = "$ " + self.accountBalance!.description
-                    self.sendMoneyButton.isEnabled = true
-                    self.withdrawButton.isEnabled = true
-                    self.transactionsButton.isEnabled = true
-                } else {
-                    self.balanceLabel.text = "N/A"
-                    self.alertLabel.text = "See front desk for account creation"
-                }
+            self.userAccount = AccountDao.getAccount(user: currentUser)
+            self.accountBalance = self.userAccount?["balance"] as? Int
+            if (self.accountBalance != nil) {
+                self.balanceLabel.text = "$ " + self.accountBalance!.description
+                self.sendMoneyButton.isEnabled = true
+                self.withdrawButton.isEnabled = true
+                self.transactionsButton.isEnabled = true
+                self.alertLabel.text = ""
+            } else {
+                self.balanceLabel.text = "N/A"
+                self.alertLabel.text = "See staff for account creation"
             }
         } else {
             print("Account retrieval error: User not logged in")
