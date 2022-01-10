@@ -8,7 +8,7 @@
 import UIKit
 import Parse
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var roleSegment: UISegmentedControl!
     @IBOutlet weak var usernameField: UITextField!
@@ -17,11 +17,39 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        self.usernameField.delegate = self
+        self.passwordField.delegate = self
+        //Looks for single or multiple taps.
+         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
 
-        // Do any additional setup after loading the view.
+        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+        //tap.cancelsTouchesInView = false
+
+        view.addGestureRecognizer(tap)
+    }
+    
+    //Calls this function when the tap is recognized.
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+
+        //textField code
+
+        textField.resignFirstResponder()  //if desired
+        signIn()
+        return true
     }
     
     @IBAction func onSignIn(_ sender: Any) {
+        signIn()
+    }
+    
+    private func signIn() {
         let username = usernameField.text!
         let password = passwordField.text!
 

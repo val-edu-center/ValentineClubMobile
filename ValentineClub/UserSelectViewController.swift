@@ -42,13 +42,14 @@ class UserSelectViewController: UIViewController, UIPickerViewDelegate, UIPicker
     } // Number of columns of data
     
     @IBAction func submit(_ sender: Any) {
-//        let selectedUserAccount =
+        let selectedUserAccount = AccountDao.getAccount(username: self.selectedUser!)
         let vc = storyboard?.instantiateViewController(withIdentifier: "confirmationView") as! ConfirmationViewController
         vc.transactionType = self.transactionType
         vc.transactionMultiplier = self.transactionMultiplier
         vc.newAccountBalance = self.newAccountBalance
         vc.amount = self.amount
         vc.selectedUser = self.selectedUser
+        vc.selectedUserAccount = selectedUserAccount
         vc.userAccount = self.userAccount
         vc.bankController = self.bankController
         vc.modalPresentationStyle = .fullScreen
