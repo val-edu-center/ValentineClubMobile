@@ -41,6 +41,7 @@ class ConfirmationViewController: UIViewController {
             updateTargetAccount()
         }
         bankController.balanceLabel.text = "$ " + newAccountBalance.description
+        bankController.setAccountBalance(balance: newAccountBalance)
         bankController.dismiss(animated: true, completion: nil)
     }
     
@@ -90,8 +91,7 @@ class ConfirmationViewController: UIViewController {
     private func updateTargetAccount() {
         //Assumes we are sending
         let oldTargetAccountBalance = selectedUserAccount!["balance"] as! Int
-        let difference = newAccountBalance - amount
-        let newTargetAccountBalance = oldTargetAccountBalance + difference
+        let newTargetAccountBalance = oldTargetAccountBalance + amount
         selectedUserAccount!["balance"] = newTargetAccountBalance
 
 

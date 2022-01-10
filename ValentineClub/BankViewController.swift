@@ -51,6 +51,9 @@ class BankViewController: UIViewController {
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true, completion: nil)
     }
+    func setAccountBalance(balance: Int) {
+        self.accountBalance = balance
+    }
     
     @objc func refresh() {
         loadAccountBalance()
