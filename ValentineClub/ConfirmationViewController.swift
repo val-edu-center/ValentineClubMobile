@@ -82,10 +82,6 @@ class ConfirmationViewController: UIViewController {
               print("Account update error: \(error?.localizedDescription)")
           }
         }
-        
-        if (selectedUser != nil) {
-            
-        }
     }
     
     private func updateTargetAccount() {
@@ -103,10 +99,6 @@ class ConfirmationViewController: UIViewController {
           } else {
               print("Account update error: \(error?.localizedDescription)")
           }
-        }
-        
-        if (selectedUser != nil) {
-            
         }
     }
     
