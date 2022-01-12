@@ -69,6 +69,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         user.password = passwordField.text
         user.setValue([role], forKey: "roles")
         user.setValue(false, forKey: "isApproved")
+        
+        let acl = PFACL()
+        acl.setReadAccess(true, forRoleWithName:"Staff")
+        acl.setReadAccess(true, forRoleWithName:"Director")
+        acl.setWriteAccess(true, forRoleWithName:"Staff")
+        acl.setWriteAccess(true, forRoleWithName:"Director")
+        user.acl = acl
 
         user.signUpInBackground { (success, error) in
             if success {
