@@ -71,9 +71,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         user.setValue(false, forKey: "isApproved")
         
         let acl = PFACL()
-        acl.setReadAccess(true, forRoleWithName:"Staff")
+        if (!(role?.elementsEqual("Staff"))!) {
+            acl.setReadAccess(true, forRoleWithName:"Staff")
+            acl.setWriteAccess(true, forRoleWithName:"Staff")
+        }
         acl.setReadAccess(true, forRoleWithName:"Director")
-        acl.setWriteAccess(true, forRoleWithName:"Staff")
         acl.setWriteAccess(true, forRoleWithName:"Director")
         user.acl = acl
 
