@@ -26,13 +26,15 @@ class TransactionViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func addOne(_ sender: Any) {
-        let newAmount = getAmountDifference( difference: 1)
-        amountLabel.text = newAmount.description
-    }
+    
     
     @IBAction func subtractOne(_ sender: Any) {
         let newAmount = getAmountDifference( difference: -1)
+        amountLabel.text = newAmount.description
+    }
+
+    @IBAction func addOne(_ sender: Any) {
+        let newAmount = getAmountDifference( difference: 1)
         amountLabel.text = newAmount.description
     }
     
