@@ -55,6 +55,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
         PFUser.logInWithUsername(inBackground: username, password: password) { (user, error) in
             if (user != nil) {
+                self.usernameField.text = ""
+                self.passwordField.text = ""
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
             } else {
                 print("Sign in error: \(error?.localizedDescription)")
