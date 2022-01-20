@@ -12,8 +12,7 @@ class UserSelectViewController: UIViewController, UIPickerViewDelegate, UIPicker
 
     @IBOutlet weak var userSelector: UIPickerView!
     
-    public var transactionType: String!
-    public var transactionMultiplier: String!
+    public var transactionType: TransactionType!
     public var newAccountBalance: Int!
     public var amount: Int!
     public var userAccount: PFObject!
@@ -45,7 +44,6 @@ class UserSelectViewController: UIViewController, UIPickerViewDelegate, UIPicker
         let selectedUserAccount = AccountDao.getAccount(username: self.selectedUser!)
         let vc = storyboard?.instantiateViewController(withIdentifier: "confirmationView") as! ConfirmationViewController
         vc.transactionType = self.transactionType
-        vc.transactionMultiplier = self.transactionMultiplier
         vc.newAccountBalance = self.newAccountBalance
         vc.amount = self.amount
         vc.selectedUser = self.selectedUser

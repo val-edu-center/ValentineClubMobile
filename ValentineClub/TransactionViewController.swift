@@ -12,8 +12,7 @@ class TransactionViewController: UIViewController {
     
     @IBOutlet weak var promptLabel: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
-    public var transactionType: String!
-    public var transactionMultiplier: String!
+    public var transactionType: TransactionType!
     public var previousAccountBalance: Int!
     public var userAccount: PFObject!
     public var bankController: BankViewController!
@@ -21,7 +20,7 @@ class TransactionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.promptLabel.text = "Select Amount to " + transactionType
+        self.promptLabel.text = "Select Amount to " + transactionType.rawValue
 
         // Do any additional setup after loading the view.
     }
@@ -40,13 +39,15 @@ class TransactionViewController: UIViewController {
     
     @IBAction func submitTransaction(_ sender: Any) {
         if (getAmount() > 0 && getNewAccountBalance() >= 0) {
-            if (transactionType.elementsEqual("Send")) {
-                let vc = createUserSelect()
-                present(vc, animated: true, completion: nil)
-                
-            } else {
-                let vc = createConfirmation()
-                present(vc, animated: true, completion: nil)
+            switch transactionType {
+                case .Send:
+                    let vc = createUserSelect()
+                    present(vc, animated: true, completion: nil)
+                case .Withdraw:
+                    let vc = createUserSelect()
+                    present(vc, animated: true, completion: nil)
+                default:
+                    print("Error: Not a valid transaction type")
             }
         }
     }
@@ -58,7 +59,6 @@ class TransactionViewController: UIViewController {
     private func createConfirmation() -> ConfirmationViewController{
         let vc = storyboard?.instantiateViewController(withIdentifier: "confirmationView") as! ConfirmationViewController
         vc.transactionType = self.transactionType
-        vc.transactionMultiplier = self.transactionMultiplier
         vc.newAccountBalance = self.getNewAccountBalance()
         vc.amount = getAmount()
         vc.userAccount = self.userAccount
@@ -71,7 +71,6 @@ class TransactionViewController: UIViewController {
     private func createUserSelect() -> UserSelectViewController{
         let vc = storyboard?.instantiateViewController(withIdentifier: "userSelectView") as! UserSelectViewController
         vc.transactionType = self.transactionType
-        vc.transactionMultiplier = self.transactionMultiplier
         vc.newAccountBalance = self.getNewAccountBalance()
         vc.amount = getAmount()
         vc.userAccount = self.userAccount
@@ -96,9 +95,13 @@ class TransactionViewController: UIViewController {
     
     
     private func getNewAccountBalance() -> Int {
-        if (transactionMultiplier.elementsEqual("-")) {
-            return previousAccountBalance - getAmount()        } else {
-            return previousAccountBalance + getAmount()
+        switch transactionType {
+            case .Send:
+                return previousAccountBalance - getAmount()
+            case .Withdraw:
+                return previousAccountBalance
+            default:
+               return previousAccountBalance
         }
     }
 
