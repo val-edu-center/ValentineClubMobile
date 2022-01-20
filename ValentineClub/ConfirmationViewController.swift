@@ -14,8 +14,7 @@ class ConfirmationViewController: UIViewController {
     
     @IBOutlet weak var amountLabel: UILabel!
     
-    public var transactionType: String!
-    public var transactionMultiplier: String!
+    public var transactionType: TransactionType!
     public var previousAccountBalance: Int!
     public var userAccount: PFObject!
     public var bankController: BankViewController!
@@ -23,25 +22,46 @@ class ConfirmationViewController: UIViewController {
     public var newAccountBalance: Int!
     public var selectedUser: String?
     public var selectedUserAccount: PFObject?
+    
+    var isCurrentUserTarget = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if (transactionType.elementsEqual("Send")) {
-            promptLabel.text = "Confirm Amount to Send to " + selectedUser!
-        } else {
-            promptLabel.text = "Confirm Amount to " + transactionType
+        let currentUsername = PFUser.current()!.username!
+        isCurrentUserTarget = selectedUser?.elementsEqual(currentUsername) ?? false
+        
+        switch transactionType {
+            case .Send:
+                promptLabel.text = "Confirm Amount to Send to " + selectedUser!
+            case .Withdraw:
+                if (isCurrentUserTarget) {
+                    promptLabel.text = "Confirm Amount to Withdraw"
+                } else {
+                    promptLabel.text = "Confirm Amount to Withdraw from " + selectedUser!
+                }
+            default:
+                print("Error: Not a valid transaction type")
         }
-        amountLabel.text = "- $" + amount.description + "\nNew Account Balance: $" + newAccountBalance.description
+        if (isCurrentUserTarget || transactionType == TransactionType.Send) {
+            amountLabel.text = "- $" + amount.description + "\nNew Account Balance: $" + newAccountBalance.description
+        } else {
+            let oldTargetAccountBalance = selectedUserAccount!["balance"] as! Int
+            let newTargetAccountBalance = oldTargetAccountBalance - amount
+            amountLabel.text = "- $" + amount.description + "\nNew Account Balance for "
+            + selectedUser! + ": $" + newTargetAccountBalance.description
+        }
     }
     
     @IBAction func submit(_ sender: Any) {
         createTransaction()
-        updateAccount()
+        if (transactionType != TransactionType.Withdraw || isCurrentUserTarget) {
+            updateAccount()
+            bankController.balanceLabel.text = "$ " + newAccountBalance.description
+            bankController.setAccountBalance(balance: newAccountBalance)
+        }
         if (selectedUserAccount != nil) {
             updateTargetAccount()
         }
-        bankController.balanceLabel.text = "$ " + newAccountBalance.description
-        bankController.setAccountBalance(balance: newAccountBalance)
         bankController.dismiss(animated: true, completion: nil)
     }
     
@@ -53,7 +73,7 @@ class ConfirmationViewController: UIViewController {
         var parseObject = PFObject(className:"Transactions")
 
         parseObject["username"] = PFUser.current()!.username!
-        parseObject["transactionType"] = transactionType
+        parseObject["transactionType"] = transactionType.rawValue
         parseObject["amount"] = amount
         if (selectedUser != nil) {
             parseObject["targetUsername"] = selectedUser
@@ -85,11 +105,18 @@ class ConfirmationViewController: UIViewController {
     }
     
     private func updateTargetAccount() {
-        //Assumes we are sending
-        let oldTargetAccountBalance = selectedUserAccount!["balance"] as! Int
-        let newTargetAccountBalance = oldTargetAccountBalance + amount
-        selectedUserAccount!["balance"] = newTargetAccountBalance
-
+        switch transactionType {
+            case .Send:
+                let oldTargetAccountBalance = selectedUserAccount!["balance"] as! Int
+                let newTargetAccountBalance = oldTargetAccountBalance + amount
+                selectedUserAccount!["balance"] = newTargetAccountBalance
+            case .Withdraw:
+                let oldTargetAccountBalance = selectedUserAccount!["balance"] as! Int
+                let newTargetAccountBalance = oldTargetAccountBalance - amount
+                selectedUserAccount!["balance"] = newTargetAccountBalance
+            default:
+               return
+        }
 
         // Saves the new object.
         selectedUserAccount!.saveInBackground {
@@ -101,23 +128,6 @@ class ConfirmationViewController: UIViewController {
           }
         }
     }
-    
-//    @IBAction func submit(_ sender: Any) {
-//        let vc = storyboard?.instantiateViewController(withIdentifier: "confirmationView") as! ConfirmationViewController
-//        vc.transactionType = self.transactionType
-//        vc.transactionMultiplier = self.transactionMultiplier
-//        vc.newAccountBalance = self.newAccountBalance
-//        vc.amount = self.amount
-//        vc.selectedUser = self.selectedUser
-//        vc.userAccount = self.userAccount
-//        vc.bankController = self.bankController
-//        vc.modalPresentationStyle = .fullScreen
-//        present(vc, animated: true, completion: nil)
-//    }
-//
-//    @IBAction func cancel(_ sender: Any) {
-
-//    }
     
 
     /*

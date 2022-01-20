@@ -32,8 +32,7 @@ class BankViewController: UIViewController {
     
     @IBAction func payNow(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "transactionView") as! TransactionViewController
-        vc.transactionType = "Send"
-        vc.transactionMultiplier = "-"
+        vc.transactionType = TransactionType.Send
         vc.previousAccountBalance = accountBalance
         vc.userAccount = userAccount
         vc.bankController = self
@@ -43,8 +42,7 @@ class BankViewController: UIViewController {
     
     @IBAction func withdraw(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "transactionView") as! TransactionViewController
-        vc.transactionType = "Withdraw"
-        vc.transactionMultiplier = "-"
+        vc.transactionType = TransactionType.Withdraw
         vc.previousAccountBalance = accountBalance
         vc.userAccount = userAccount
         vc.bankController = self

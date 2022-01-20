@@ -24,7 +24,14 @@ class TransactionTableViewController: UITableViewController {
         let query = PFQuery.orQuery(withSubqueries: [usernameQuery, targetUsernameQuery])
         
         do {
-            try transactions = query.findObjects()
+            try transactions = query.findObjects().filter({ transaction in
+                let targetUsername = transaction["targetUsername"] as? String
+                let transactionType = transaction["transactionType"] as! String
+                let isCurrentUserTarget = targetUsername?.elementsEqual(currentUsername) ?? false
+                let isTransactionTypeSend = TransactionType(rawValue: transactionType) == TransactionType.Send
+                
+                return isTransactionTypeSend || isCurrentUserTarget
+            })
         } catch {
             print("Transaction retrival error: \(error.localizedDescription)")
         }
@@ -50,24 +57,31 @@ extension  TransactionTableViewController {
         let targetUsername = transaction["targetUsername"] as? String
         let transactionType = transaction["transactionType"] as! String
         let username = transaction["username"] as! String
-        if (transactionType.elementsEqual("Send")) {
-            if (username.elementsEqual(currentUsername)) {
+        
+        switch TransactionType(rawValue: transactionType) {
+            case .Send:
+                if (username.elementsEqual(currentUsername)) {
+                    cell.amountLabel.textColor = UIColor.systemRed
+                    cell.amountLabel.text = "- $" + amount.description
+                    cell.descriptionLabel.text = "Sent to " + targetUsername!
+                } else {
+                    cell.amountLabel.textColor = UIColor.systemGreen
+                    cell.amountLabel.text = "+ $" + amount.description
+                    cell.descriptionLabel.text = "Sent from " + username
+                }
+            case .Withdraw:
                 cell.amountLabel.textColor = UIColor.systemRed
                 cell.amountLabel.text = "- $" + amount.description
-                cell.descriptionLabel.text = "Sent to " + targetUsername!
-            } else {
-                cell.amountLabel.textColor = UIColor.systemGreen
-                cell.amountLabel.text = "+ $" + amount.description
-                cell.descriptionLabel.text = "Sent from " + username
-            }
-        } else if (transactionType.elementsEqual("Withdraw")){
-            cell.amountLabel.textColor = UIColor.systemRed
-            cell.amountLabel.text = "- $" + amount.description
-            cell.descriptionLabel.text = "Withdrawl"
-        } else {
-            cell.amountLabel.text = amount.description
-            cell.descriptionLabel.text = "Unsure how to describe"
+                if (username.elementsEqual(currentUsername)) {
+                    cell.descriptionLabel.text = "Withdrawal"
+                } else {
+                    cell.descriptionLabel.text = "Withdrawal by " + username
+                }
+            default:
+                cell.amountLabel.text = amount.description
+                cell.descriptionLabel.text = "Unsure how to describe"
         }
+        
         return cell
         
     }
