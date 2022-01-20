@@ -30,7 +30,7 @@ class UserSelectViewController: UIViewController, UIPickerViewDelegate, UIPicker
         do {
             let users = try PFUser.query()!.findObjects() as! [PFUser]
             pickerData = users.compactMap {$0.username}.filter({ username in
-                !username.elementsEqual(currentUsername)
+                !username.elementsEqual(currentUsername) || transactionType == TransactionType.Withdraw
             })
             selectedUser = pickerData[0]
         } catch {

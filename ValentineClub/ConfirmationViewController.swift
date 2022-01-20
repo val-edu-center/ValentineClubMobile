@@ -25,15 +25,29 @@ class ConfirmationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let currentUsername = PFUser.current()!.username!
+        let isCurrentUserTarget = selectedUser?.elementsEqual(currentUsername) ?? false
+        
         switch transactionType {
             case .Send:
                 promptLabel.text = "Confirm Amount to Send to " + selectedUser!
             case .Withdraw:
-                promptLabel.text = "Confirm Amount to Withdraw from " + selectedUser!
+                if (isCurrentUserTarget) {
+                    promptLabel.text = "Confirm Amount to Withdraw"
+                } else {
+                    promptLabel.text = "Confirm Amount to Withdraw from " + selectedUser!
+                }
             default:
                 print("Error: Not a valid transaction type")
         }
-        amountLabel.text = "- $" + amount.description + "\nNew Account Balance: $" + newAccountBalance.description
+        if (isCurrentUserTarget || transactionType == TransactionType.Send) {
+            amountLabel.text = "- $" + amount.description + "\nNew Account Balance: $" + newAccountBalance.description
+        } else {
+            let oldTargetAccountBalance = selectedUserAccount!["balance"] as! Int
+            let newTargetAccountBalance = oldTargetAccountBalance - amount
+            amountLabel.text = "- $" + amount.description + "\nNew Account Balance for "
+            + selectedUser! + ": $" + newTargetAccountBalance.description
+        }
     }
     
     @IBAction func submit(_ sender: Any) {
