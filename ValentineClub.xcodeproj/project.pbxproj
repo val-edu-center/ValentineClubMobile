@@ -29,6 +29,7 @@
 		A3D0878B278158DE00E178E6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D08780278158DD00E178E6 /* LoginViewController.swift */; };
 		A3D0878C278158DE00E178E6 /* BankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D08781278158DD00E178E6 /* BankViewController.swift */; };
 		A3D0878D278158DE00E178E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D08782278158DD00E178E6 /* SceneDelegate.swift */; };
+		A3E310182798C2A700D87B73 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E310172798C2A700D87B73 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		A3D08780278158DD00E178E6 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A3D08781278158DD00E178E6 /* BankViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankViewController.swift; sourceTree = "<group>"; };
 		A3D08782278158DD00E178E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		A3E310172798C2A700D87B73 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A80B3F8B76E9EF5A6E6AB8EF /* Pods-ValentineClub-ValentineClubUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ValentineClub-ValentineClubUITests.debug.xcconfig"; path = "Target Support Files/Pods-ValentineClub-ValentineClubUITests/Pods-ValentineClub-ValentineClubUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B61C710A91BB8BA6B013A729 /* Pods_ValentineClub_ValentineClubUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ValentineClub_ValentineClubUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8614A5A67206408B62E3DCF /* Pods_ValentineClubTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ValentineClubTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,6 +164,7 @@
 				A35C87C5277E3230009B5788 /* AppDelegate.swift */,
 				A35C87C7277E3230009B5788 /* SceneDelegate.swift */,
 				A35C87CB277E3230009B5788 /* Main.storyboard */,
+				A3E310172798C2A700D87B73 /* HomeViewController.swift */,
 				A35C87CE277E3232009B5788 /* Assets.xcassets */,
 				A35C87D0277E3232009B5788 /* LaunchScreen.storyboard */,
 				A3D08779278158DD00E178E6 /* AppDelegate.swift */,
@@ -441,6 +444,7 @@
 				A35C87C6277E3230009B5788 /* AppDelegate.swift in Sources */,
 				A3D08786278158DE00E178E6 /* UserSelectViewController.swift in Sources */,
 				A32195E1278B9B1F0037AC3C /* AccountDao.swift in Sources */,
+				A3E310182798C2A700D87B73 /* HomeViewController.swift in Sources */,
 				A3D0878A278158DE00E178E6 /* WithdrawViewController.swift in Sources */,
 				A3D08789278158DE00E178E6 /* TransactionViewController.swift in Sources */,
 				A32BEE3D278688E8002C4589 /* ConfirmationViewController.swift in Sources */,
