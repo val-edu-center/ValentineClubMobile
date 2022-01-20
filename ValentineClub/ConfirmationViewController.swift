@@ -22,11 +22,13 @@ class ConfirmationViewController: UIViewController {
     public var newAccountBalance: Int!
     public var selectedUser: String?
     public var selectedUserAccount: PFObject?
+    
+    var isCurrentUserTarget = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
         let currentUsername = PFUser.current()!.username!
-        let isCurrentUserTarget = selectedUser?.elementsEqual(currentUsername) ?? false
+        isCurrentUserTarget = selectedUser?.elementsEqual(currentUsername) ?? false
         
         switch transactionType {
             case .Send:
@@ -52,7 +54,7 @@ class ConfirmationViewController: UIViewController {
     
     @IBAction func submit(_ sender: Any) {
         createTransaction()
-        if (transactionType != TransactionType.Withdraw) {
+        if (transactionType != TransactionType.Withdraw || isCurrentUserTarget) {
             updateAccount()
             bankController.balanceLabel.text = "$ " + newAccountBalance.description
             bankController.setAccountBalance(balance: newAccountBalance)
