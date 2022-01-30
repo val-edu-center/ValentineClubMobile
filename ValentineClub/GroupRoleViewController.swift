@@ -9,25 +9,30 @@ import UIKit
 
 class GroupRoleViewController: UIViewController {
     
-    public var role: String!
+    public var role: Role?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        switch role {
-//        case.Member
-//        }
-        
-        if (role.elementsEqual("Teen")) {
-            self.view.backgroundColor = UIColor.blue
-        } else if (role.elementsEqual("Member")) {
-            self.view.backgroundColor = UIColor.red
-        } else if (role.elementsEqual("Staff")) {
-            self.view.backgroundColor = UIColor.green
-        } else if (role.elementsEqual("Director")) {
-            self.view.backgroundColor = UIColor.purple
-        } else {
-            self.view.backgroundColor = UIColor.systemPink
+        if (role != nil) {
+            switch role! {
+            case Role.Director:
+                self.view.backgroundColor = UIColor.purple
+            case Role.Staff:
+                self.view.backgroundColor = UIColor.green
+            case Role.Teen:
+                self.view.backgroundColor = UIColor.blue
+            case Role.Intermediate:
+                self.view.backgroundColor = UIColor.red
+            case Role.Junior:
+                self.view.backgroundColor = UIColor.red
+            case Role.Prep:
+                self.view.backgroundColor = UIColor.red
+            case Role.Cadet:
+                self.view.backgroundColor = UIColor.red
+            default:
+                self.view.backgroundColor = UIColor.orange
+            }
+            
         }
 
         // Do any additional setup after loading the view.

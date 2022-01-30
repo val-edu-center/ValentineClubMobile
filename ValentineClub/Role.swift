@@ -8,5 +8,5 @@
 import Foundation
 
 enum Role: String {
-    case Member, Staff, Director, Teen, Banker
+    case Staff, Director, Teen, Banker, Intermediate, Junior, Prep, Cadet
 }
