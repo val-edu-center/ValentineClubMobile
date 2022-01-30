@@ -62,10 +62,11 @@ class BankViewController: UIViewController {
     
     private func loadAccountBalance() {
         let currentUser = PFUser.current()
+        let isApproved = currentUser?["isApproved"] as? Bool ?? false
         if currentUser != nil {
             self.userAccount = AccountDao.getAccount(user: currentUser)
             self.accountBalance = self.userAccount?["balance"] as? Int
-            if (self.accountBalance != nil) {
+            if (self.accountBalance != nil && isApproved) {
                 self.balanceLabel.text = "$ " + self.accountBalance!.description
                 self.sendMoneyButton.isEnabled = true
                 self.withdrawButton.isEnabled = true
@@ -73,7 +74,11 @@ class BankViewController: UIViewController {
                 self.alertLabel.text = ""
             } else {
                 self.balanceLabel.text = "N/A"
-                self.alertLabel.text = "See staff for account creation"
+                if (self.accountBalance == nil) {
+                    self.alertLabel.text = "See staff for account creation"
+                } else {
+                    self.alertLabel.text = "See staff for account approval"
+                }
             }
         } else {
             print("Account retrieval error: User not logged in")

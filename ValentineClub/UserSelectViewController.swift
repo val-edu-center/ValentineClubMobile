@@ -32,7 +32,9 @@ class UserSelectViewController: UIViewController, UIPickerViewDelegate, UIPicker
             pickerData = users.compactMap {$0.username}.filter({ username in
                 !username.elementsEqual(currentUsername) || transactionType == TransactionType.Withdraw
             })
-            selectedUser = pickerData[0]
+            if (!pickerData.isEmpty) {
+                selectedUser = pickerData[0]
+            }
         } catch {
             print("User retrieval error: \(error.localizedDescription)")
         }
