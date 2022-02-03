@@ -102,6 +102,13 @@
                                     <action selector="onSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hP2-1L-r7I"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoDark" translatesAutoresizingMaskIntoConstraints="NO" id="CoZ-N3-Eul">
+                                <rect key="frame" x="53.5" y="132" width="307" height="157"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="307" id="dDZ-aD-Rjo"/>
+                                    <constraint firstAttribute="height" constant="157" id="jEo-Ox-dNg"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -109,6 +116,7 @@
                             <constraint firstItem="7uX-Yz-Zpt" firstAttribute="leading" secondItem="QeP-Xq-vWD" secondAttribute="leading" id="1sz-O8-sRQ"/>
                             <constraint firstItem="7uX-Yz-Zpt" firstAttribute="top" secondItem="QeP-Xq-vWD" secondAttribute="bottom" constant="8" symbolic="YES" id="42J-WJ-wZ7"/>
                             <constraint firstItem="jBS-zM-C4N" firstAttribute="top" secondItem="7uX-Yz-Zpt" secondAttribute="bottom" constant="8" symbolic="YES" id="8BM-pG-hFB"/>
+                            <constraint firstItem="CoZ-N3-Eul" firstAttribute="leading" secondItem="Qri-Ko-DXR" secondAttribute="leading" id="AMf-ls-Vmu"/>
                             <constraint firstItem="QeP-Xq-vWD" firstAttribute="trailing" secondItem="vOc-ff-d2T" secondAttribute="trailing" id="BqZ-05-DcZ"/>
                             <constraint firstItem="vOc-ff-d2T" firstAttribute="leading" secondItem="cpm-rD-e23" secondAttribute="leading" id="ESN-d9-eFQ"/>
                             <constraint firstItem="rNP-gb-sCI" firstAttribute="leading" secondItem="cpm-rD-e23" secondAttribute="leading" id="HTQ-dA-6Y9"/>
@@ -126,11 +134,15 @@
                             <constraint firstItem="vOc-ff-d2T" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gCJ-vA-CAq"/>
                             <constraint firstItem="wIV-Yl-mY1" firstAttribute="top" secondItem="vOc-ff-d2T" secondAttribute="bottom" constant="8" symbolic="YES" id="hua-Fd-RWq"/>
                             <constraint firstItem="QeP-Xq-vWD" firstAttribute="top" secondItem="wIV-Yl-mY1" secondAttribute="bottom" constant="8" symbolic="YES" id="iuF-i1-3Nk"/>
+                            <constraint firstItem="CoZ-N3-Eul" firstAttribute="top" secondItem="1ye-8J-4kB" secondAttribute="bottom" constant="20" id="jSd-HX-xgV"/>
+                            <constraint firstItem="CoZ-N3-Eul" firstAttribute="trailing" secondItem="Qri-Ko-DXR" secondAttribute="trailing" id="nU2-hF-R4P"/>
                             <constraint firstItem="QeP-Xq-vWD" firstAttribute="leading" secondItem="cpm-rD-e23" secondAttribute="leading" id="oiY-Df-yAv"/>
                             <constraint firstItem="jBS-zM-C4N" firstAttribute="leading" secondItem="QeP-Xq-vWD" secondAttribute="leading" id="zUN-Rk-rXk"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="logoDarkView" destination="CoZ-N3-Eul" id="QUo-Db-fux"/>
+                        <outlet property="logoLightView" destination="Qri-Ko-DXR" id="7Mh-bS-od5"/>
                         <outlet property="passwordField" destination="QeP-Xq-vWD" id="YlL-zx-A4K"/>
                         <outlet property="roleSegment" destination="jBS-zM-C4N" id="chE-by-m9G"/>
                         <outlet property="usernameField" destination="vOc-ff-d2T" id="Ylo-zp-xkx"/>
@@ -685,6 +697,7 @@
     <resources>
         <image name="Front" width="348" height="348"/>
         <image name="Logo" width="180" height="100"/>
+        <image name="LogoDark" width="180" height="100"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

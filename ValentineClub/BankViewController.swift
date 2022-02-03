@@ -19,9 +19,13 @@ class BankViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     private var accountBalance: Int? = nil
     private var userAccount: PFObject? = nil
+    var role: Role!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if (role != Role.Director && role != Role.Staff) {
+            withdrawButton.isHidden = true
+        }
         scrollView.refreshControl = UIRefreshControl()
         scrollView.refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
         let contentWidth = scrollView.bounds.width

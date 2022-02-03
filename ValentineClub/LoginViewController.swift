@@ -13,10 +13,20 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var roleSegment: UISegmentedControl!
     @IBOutlet weak var usernameField: UITextField!
     
+    @IBOutlet weak var logoDarkView: UIImageView!
+    @IBOutlet weak var logoLightView: UIImageView!
     @IBOutlet weak var passwordField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if traitCollection.userInterfaceStyle == .light {
+            logoLightView.isHidden = false
+            logoDarkView.isHidden = true
+        } else {
+            logoLightView.isHidden = true
+            logoDarkView.isHidden = false
+        }
         
         
         self.usernameField.delegate = self

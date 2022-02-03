@@ -12,12 +12,12 @@ class UserSelectViewController: UIViewController, UIPickerViewDelegate, UIPicker
 
     @IBOutlet weak var userSelector: UIPickerView!
     
-    public var transactionType: TransactionType!
-    public var newAccountBalance: Int!
-    public var amount: Int!
-    public var userAccount: PFObject!
-    public var selectedUser: String?
-    public var bankController: BankViewController!
+    var transactionType: TransactionType!
+    var newAccountBalance: Int!
+    var amount: Int!
+    var userAccount: PFObject!
+    var selectedUser: String?
+    var bankController: BankViewController!
     
     var pickerData: [String] = [String]()
     
