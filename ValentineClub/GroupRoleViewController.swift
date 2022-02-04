@@ -9,7 +9,7 @@ import UIKit
 
 class GroupRoleViewController: UIViewController {
     
-    public var role: Role?
+    var role: Role?
 
     override func viewDidLoad() {
         super.viewDidLoad()

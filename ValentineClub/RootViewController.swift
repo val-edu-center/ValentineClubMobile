@@ -20,6 +20,7 @@ class RootViewController: UITabBarController {
         
         let bankView = storyboard?.instantiateViewController(withIdentifier: "bankView") as! BankViewController
         bankView.title = "V Bux"
+        bankView.role = groupRole
         
         let groupRoleView = storyboard?.instantiateViewController(withIdentifier: "groupRoleView") as! GroupRoleViewController
         groupRoleView.title = groupRole?.rawValue ?? "Guest"

@@ -14,14 +14,14 @@ class ConfirmationViewController: UIViewController {
     
     @IBOutlet weak var amountLabel: UILabel!
     
-    public var transactionType: TransactionType!
-    public var previousAccountBalance: Int!
-    public var userAccount: PFObject!
-    public var bankController: BankViewController!
-    public var amount: Int!
-    public var newAccountBalance: Int!
-    public var selectedUser: String?
-    public var selectedUserAccount: PFObject?
+    var transactionType: TransactionType!
+    var previousAccountBalance: Int!
+    var userAccount: PFObject!
+    var bankController: BankViewController!
+    var amount: Int!
+    var newAccountBalance: Int!
+    var selectedUser: String?
+    var selectedUserAccount: PFObject?
     
     var isCurrentUserTarget = false
 

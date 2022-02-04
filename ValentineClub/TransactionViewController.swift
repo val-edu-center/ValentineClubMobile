@@ -12,10 +12,10 @@ class TransactionViewController: UIViewController {
     
     @IBOutlet weak var promptLabel: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
-    public var transactionType: TransactionType!
-    public var previousAccountBalance: Int!
-    public var userAccount: PFObject!
-    public var bankController: BankViewController!
+    var transactionType: TransactionType!
+    var previousAccountBalance: Int!
+    var userAccount: PFObject!
+    var bankController: BankViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
