@@ -24,6 +24,9 @@ class BankViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if (role != Role.Director && role != Role.Staff) {
+            if (role == Role.Cadet) {
+                sendMoneyButton.isHidden = true
+            }
             withdrawButton.isHidden = true
         }
         scrollView.refreshControl = UIRefreshControl()
