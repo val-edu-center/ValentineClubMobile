@@ -86,6 +86,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         if (!(role?.elementsEqual("Staff"))!) {
             acl.setWriteAccess(true, forRoleWithName:"Staff")
             acl.setReadAccess(true, forRoleWithName:"Club")
+            acl.setReadAccess(true, forRoleWithName: role!)
         }
         acl.setReadAccess(true, forRoleWithName:"Staff")
         acl.setReadAccess(true, forRoleWithName:"Director")
