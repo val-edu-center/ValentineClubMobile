@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xXT-yy-d4C">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -523,13 +523,126 @@
                     <view key="view" contentMode="scaleToFill" id="XIn-Ex-vnI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D7y-dm-JLo">
+                                <rect key="frame" x="20" y="413" width="374" height="80"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="H3n-l8-OFI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Withdraw">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <buttonConfiguration key="configuration" style="filled" title="3D Printing">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" name="AccentColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="withdraw:" destination="1oI-X9-lsN" eventType="touchUpInside" id="Mcp-ZU-u72"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tpL-wg-6gb">
+                                <rect key="frame" x="20" y="325" width="374" height="80"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="yQK-QN-eEc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Withdraw">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <buttonConfiguration key="configuration" style="filled" title="Teen Night Voting">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" name="AccentColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="presentVotingView:" destination="xXT-yy-d4C" eventType="touchUpInside" id="rhX-kO-5N0"/>
+                                    <action selector="withdraw:" destination="1oI-X9-lsN" eventType="touchUpInside" id="mkZ-Od-ONk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EIz-TP-BB2">
+                                <rect key="frame" x="20" y="501" width="374" height="80"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="7w1-U1-Z85"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Withdraw">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <buttonConfiguration key="configuration" style="filled" title="Schedule">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" name="AccentColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="withdraw:" destination="1oI-X9-lsN" eventType="touchUpInside" id="cOU-El-aYr"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="nbP-Bf-l7D"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="EIz-TP-BB2" firstAttribute="top" secondItem="D7y-dm-JLo" secondAttribute="bottom" constant="8" symbolic="YES" id="2E2-7a-1I3"/>
+                            <constraint firstItem="D7y-dm-JLo" firstAttribute="trailing" secondItem="tpL-wg-6gb" secondAttribute="trailing" id="5KU-dX-Wf0"/>
+                            <constraint firstItem="D7y-dm-JLo" firstAttribute="top" secondItem="tpL-wg-6gb" secondAttribute="bottom" constant="8" symbolic="YES" id="AtU-W6-oUj"/>
+                            <constraint firstItem="EIz-TP-BB2" firstAttribute="trailing" secondItem="tpL-wg-6gb" secondAttribute="trailing" id="OPR-Rn-qcd"/>
+                            <constraint firstItem="EIz-TP-BB2" firstAttribute="leading" secondItem="tpL-wg-6gb" secondAttribute="leading" id="QvN-fo-Uq9"/>
+                            <constraint firstItem="nbP-Bf-l7D" firstAttribute="trailing" secondItem="D7y-dm-JLo" secondAttribute="trailing" constant="20" id="UAF-8h-gF4"/>
+                            <constraint firstItem="D7y-dm-JLo" firstAttribute="leading" secondItem="nbP-Bf-l7D" secondAttribute="leading" constant="20" id="dtU-5o-ZJ9"/>
+                            <constraint firstItem="D7y-dm-JLo" firstAttribute="centerY" secondItem="nbP-Bf-l7D" secondAttribute="centerY" id="eOO-hC-1Fi"/>
+                            <constraint firstItem="D7y-dm-JLo" firstAttribute="leading" secondItem="tpL-wg-6gb" secondAttribute="leading" id="hxB-O1-IR4"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="printingButton" destination="D7y-dm-JLo" id="HP7-fX-ygn"/>
+                        <outlet property="scheduleButton" destination="EIz-TP-BB2" id="Vyk-cV-GQz"/>
+                        <outlet property="votingButton" destination="tpL-wg-6gb" id="hz5-rg-360"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="44s-HE-j47" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4741" y="761"/>
+            <point key="canvasLocation" x="4740.579710144928" y="760.71428571428567"/>
+        </scene>
+        <!--Voting View Controller-->
+        <scene sceneID="UuS-Xe-Y4Z">
+            <objects>
+                <viewController id="YbI-b7-wkz" customClass="VotingViewController" customModule="ValentineClub" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zBm-tW-JgL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="lM0-DY-RDU">
+                                <rect key="frame" x="0.0" y="73" width="414" height="823"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HTe-vO-hNC">
+                                <rect key="frame" x="20" y="44" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="CKW-fK-42n"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HTe-vO-hNC" firstAttribute="centerX" secondItem="CKW-fK-42n" secondAttribute="centerX" id="0fE-eP-xz0"/>
+                            <constraint firstItem="HTe-vO-hNC" firstAttribute="leading" secondItem="CKW-fK-42n" secondAttribute="leading" constant="20" id="6v7-di-NQx"/>
+                            <constraint firstItem="HTe-vO-hNC" firstAttribute="top" secondItem="CKW-fK-42n" secondAttribute="top" id="PdG-gk-quo"/>
+                            <constraint firstItem="lM0-DY-RDU" firstAttribute="leading" secondItem="CKW-fK-42n" secondAttribute="leading" id="SYM-mo-zjW"/>
+                            <constraint firstItem="lM0-DY-RDU" firstAttribute="top" secondItem="HTe-vO-hNC" secondAttribute="bottom" constant="8" symbolic="YES" id="TnN-Lt-Rrf"/>
+                            <constraint firstItem="lM0-DY-RDU" firstAttribute="bottom" secondItem="CKW-fK-42n" secondAttribute="bottom" constant="34" id="eCS-sU-ZeU"/>
+                            <constraint firstItem="CKW-fK-42n" firstAttribute="trailing" secondItem="HTe-vO-hNC" secondAttribute="trailing" constant="20" id="pXM-y1-KkY"/>
+                            <constraint firstItem="CKW-fK-42n" firstAttribute="trailing" secondItem="lM0-DY-RDU" secondAttribute="trailing" id="roN-Ky-gWE"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RD5-a5-jyw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4740.579710144928" y="1520.7589285714284"/>
         </scene>
         <!--User Select View Controller-->
         <scene sceneID="1N1-QA-H0B">

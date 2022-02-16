@@ -10,25 +10,41 @@ import UIKit
 class GroupRoleViewController: UIViewController {
     
     var role: Role?
-
+    
+    @IBOutlet weak var votingButton: UIButton!
+    
+    @IBOutlet weak var printingButton: UIButton!
+    
+    @IBOutlet weak var scheduleButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if (role != nil) {
             switch role! {
             case Role.Director:
-                self.view.backgroundColor = UIColor.purple
+                votingButton.isEnabled = true
+                printingButton.isEnabled = true
+                scheduleButton.isEnabled = true
             case Role.Staff:
-                self.view.backgroundColor = UIColor.green
+                votingButton.isEnabled = true
+                printingButton.isEnabled = true
+                scheduleButton.isEnabled = true
             case Role.Teen:
-                self.view.backgroundColor = UIColor.blue
+                votingButton.isEnabled = true
+                printingButton.isEnabled = true
+                scheduleButton.isEnabled = true
             case Role.Intermediate:
-                self.view.backgroundColor = UIColor.red
+                printingButton.isEnabled = true
+                scheduleButton.isEnabled = true
             case Role.Junior:
-                self.view.backgroundColor = UIColor.red
+                printingButton.isEnabled = true
+                scheduleButton.isEnabled = true
             case Role.Prep:
-                self.view.backgroundColor = UIColor.red
+                printingButton.isEnabled = true
+                scheduleButton.isEnabled = true
             case Role.Cadet:
-                self.view.backgroundColor = UIColor.red
+                printingButton.isEnabled = true
+                scheduleButton.isEnabled = true
             default:
                 self.view.backgroundColor = UIColor.orange
             }
@@ -37,6 +53,12 @@ class GroupRoleViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    
+    @IBAction func presentVotingView(_ sender: Any) {
+    }
+    
+    
     /*
     // MARK: - Navigation
 
