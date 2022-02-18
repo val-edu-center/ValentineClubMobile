@@ -6,13 +6,19 @@
 //
 
 import UIKit
+import Parse
 
-class VotingViewController: UIViewController {
+var gameNights: [PFObject] = [PFObject]()
+
+class VotingViewController: UITableViewController {
 
     
+    let radioButton = "RadioButtonTableViewCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableView.register(UINib(nibName: radioButton, bundle: nil), forCellReuseIdentifier: radioButton)
 
         // Do any additional setup after loading the view.
     }
@@ -28,4 +34,21 @@ class VotingViewController: UIViewController {
     }
     */
 
+}
+
+extension VotingViewController {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return gameNights.count
+    }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return createVotingView(indexPath: indexPath, gameNight: gameNights[indexPath.row])
+    }
+    
+    private func createVotingView(indexPath: IndexPath, gameNight: PFObject) -> RadioButtonTableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: radioButton, for: indexPath) as? RadioButtonTableViewCell else {
+                fatalError("Unable to dequeue TransactionCell")
+            }
+        
+        return cell
+    }
 }

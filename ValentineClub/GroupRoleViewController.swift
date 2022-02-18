@@ -56,6 +56,10 @@ class GroupRoleViewController: UIViewController {
     
     
     @IBAction func presentVotingView(_ sender: Any) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "votingView") as! VotingViewController
+        
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
     }
     
     
