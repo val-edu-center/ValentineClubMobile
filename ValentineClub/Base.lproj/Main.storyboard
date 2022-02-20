@@ -514,7 +514,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="POU-kr-z2o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2951" y="1521"/>
+            <point key="canvasLocation" x="2874" y="1564"/>
         </scene>
         <!--Group Role View Controller-->
         <scene sceneID="Tjc-oQ-yPs">
@@ -559,8 +559,8 @@
                                     <color key="baseBackgroundColor" name="AccentColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="presentVotingView:" destination="xXT-yy-d4C" eventType="touchUpInside" id="rhX-kO-5N0"/>
                                     <action selector="withdraw:" destination="1oI-X9-lsN" eventType="touchUpInside" id="mkZ-Od-ONk"/>
+                                    <segue destination="WDh-ud-g5N" kind="show" id="DNA-eU-QDb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EIz-TP-BB2">
@@ -607,42 +607,43 @@
             </objects>
             <point key="canvasLocation" x="4740.579710144928" y="760.71428571428567"/>
         </scene>
-        <!--Voting View Controller-->
-        <scene sceneID="UuS-Xe-Y4Z">
+        <!--Game Night Vote View Controller-->
+        <scene sceneID="vJr-gD-8Wx">
             <objects>
-                <viewController storyboardIdentifier="votingView" id="YbI-b7-wkz" customClass="VotingViewController" customModule="ValentineClub" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="zBm-tW-JgL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                <viewController id="WDh-ud-g5N" customClass="GameNightVoteViewController" customModule="ValentineClub" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0zA-or-e7n">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="lM0-DY-RDU">
-                                <rect key="frame" x="0.0" y="73" width="414" height="823"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hwS-m6-Ge2">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HTe-vO-hNC">
-                                <rect key="frame" x="20" y="44" width="374" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pu7-hx-3XZ">
+                                <rect key="frame" x="172" y="777" width="70" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Submit"/>
+                                <connections>
+                                    <action selector="submit:" destination="WDh-ud-g5N" eventType="touchUpInside" id="4bN-ag-Tdn"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="CKW-fK-42n"/>
+                        <viewLayoutGuide key="safeArea" id="h1o-gX-I0y"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="HTe-vO-hNC" firstAttribute="centerX" secondItem="CKW-fK-42n" secondAttribute="centerX" id="0fE-eP-xz0"/>
-                            <constraint firstItem="HTe-vO-hNC" firstAttribute="leading" secondItem="CKW-fK-42n" secondAttribute="leading" constant="20" id="6v7-di-NQx"/>
-                            <constraint firstItem="HTe-vO-hNC" firstAttribute="top" secondItem="CKW-fK-42n" secondAttribute="top" id="PdG-gk-quo"/>
-                            <constraint firstItem="lM0-DY-RDU" firstAttribute="leading" secondItem="CKW-fK-42n" secondAttribute="leading" id="SYM-mo-zjW"/>
-                            <constraint firstItem="lM0-DY-RDU" firstAttribute="top" secondItem="HTe-vO-hNC" secondAttribute="bottom" constant="8" symbolic="YES" id="TnN-Lt-Rrf"/>
-                            <constraint firstItem="lM0-DY-RDU" firstAttribute="bottom" secondItem="CKW-fK-42n" secondAttribute="bottom" constant="34" id="eCS-sU-ZeU"/>
-                            <constraint firstItem="CKW-fK-42n" firstAttribute="trailing" secondItem="HTe-vO-hNC" secondAttribute="trailing" constant="20" id="pXM-y1-KkY"/>
-                            <constraint firstItem="CKW-fK-42n" firstAttribute="trailing" secondItem="lM0-DY-RDU" secondAttribute="trailing" id="roN-Ky-gWE"/>
+                            <constraint firstItem="pu7-hx-3XZ" firstAttribute="centerX" secondItem="h1o-gX-I0y" secondAttribute="centerX" id="1Yi-qd-AUu"/>
+                            <constraint firstItem="h1o-gX-I0y" firstAttribute="bottom" secondItem="pu7-hx-3XZ" secondAttribute="bottom" id="1bk-5Y-inb"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Ock-Jf-Svv"/>
+                    <connections>
+                        <outlet property="tableView" destination="hwS-m6-Ge2" id="jmP-zR-iws"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RD5-a5-jyw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fik-bb-8KI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4740.579710144928" y="1520.7589285714284"/>
+            <point key="canvasLocation" x="4741" y="1564"/>
         </scene>
         <!--User Select View Controller-->
         <scene sceneID="1N1-QA-H0B">

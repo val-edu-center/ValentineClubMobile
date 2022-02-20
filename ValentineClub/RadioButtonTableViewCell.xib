@@ -17,33 +17,31 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bFN-SU-XLH">
-                        <rect key="frame" x="16" y="8" width="47" height="29"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bFN-SU-XLH">
+                        <rect key="frame" x="16" y="8" width="25" height="25"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="044-Bh-kuA">
-                        <rect key="frame" x="71" y="12" width="42" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="044-Bh-kuA">
+                        <rect key="frame" x="72" y="11.5" width="232" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="044-Bh-kuA" firstAttribute="leading" secondItem="bFN-SU-XLH" secondAttribute="trailing" constant="18" id="FNt-gP-R7t"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <constraints>
+                <constraint firstItem="bFN-SU-XLH" firstAttribute="leading" secondItem="njF-e1-oar" secondAttribute="leading" constant="16" id="VUQ-WD-eGV"/>
+                <constraint firstItem="044-Bh-kuA" firstAttribute="centerY" secondItem="njF-e1-oar" secondAttribute="centerY" id="gMq-SC-K7c"/>
+                <constraint firstItem="bFN-SU-XLH" firstAttribute="centerY" secondItem="njF-e1-oar" secondAttribute="centerY" id="x0G-3k-zIX"/>
+            </constraints>
             <connections>
                 <outlet property="iconImage" destination="bFN-SU-XLH" id="RqF-7U-S2y"/>
                 <outlet property="titleLabel" destination="044-Bh-kuA" id="okh-Rn-3O2"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="75"/>
         </tableViewCell>
-        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qy9-fK-4lg">
-            <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-            <nil key="textColor"/>
-            <nil key="highlightedColor"/>
-            <point key="canvasLocation" x="65" y="10"/>
-        </label>
     </objects>
 </document>
