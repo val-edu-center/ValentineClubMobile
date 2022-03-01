@@ -14,6 +14,7 @@ class GameNightVoteViewController: UIViewController, UITableViewDataSource, UITa
     private var gameNights: [PFObject] = [PFObject]()
     private var oldUserVoteMap: [String:String] = [:]
     private var userVoteMap: [String:String] = [:]
+    private var oldUserVotes: [PFObject] = []
     let radioButton = "RadioButtonTableViewCell"
     let dateFormatter = DateFormatter()
     
@@ -38,8 +39,10 @@ class GameNightVoteViewController: UIViewController, UITableViewDataSource, UITa
         let gameNightVotesQuery = PFQuery(className:"GameNightVotes")
         gameNightVotesQuery.whereKey("username", equalTo: PFUser.current()!.username!)
         do {
-            try userVoteMap = loadUserVoteMap(userVotes: gameNightVotesQuery.findObjects())
+            let userVotes = try gameNightVotesQuery.findObjects()
+            let userVoteMap = loadUserVoteMap(userVotes: userVotes)
             oldUserVoteMap = userVoteMap
+            oldUserVotes = userVotes
         } catch {
             print(" Game Night Vote retrival error: \(error.localizedDescription)")
         }
@@ -56,6 +59,17 @@ class GameNightVoteViewController: UIViewController, UITableViewDataSource, UITa
                 parseObject["option"] = userVoteMap[gameNightDate]
                 parseObject["gameNightDate"] = gameNightDate
 
+                let oldVote = oldUserVotes.first(where: {
+                    let voteGameNightDate = $0["gameNightDate"] as! String
+                    return voteGameNightDate.elementsEqual(gameNightDate)
+                })
+                
+                do {
+                    try oldVote?.delete()
+                } catch {
+                    print("Vote deletion error: \(error.localizedDescription)")
+                }
+                
                 // Saves the new object.
                 parseObject.saveInBackground {
                   (success: Bool, error: Error?) in
