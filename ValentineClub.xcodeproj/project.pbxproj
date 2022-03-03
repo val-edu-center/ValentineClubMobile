@@ -21,6 +21,7 @@
 		A35C87DD277E3232009B5788 /* ValentineClubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35C87DC277E3232009B5788 /* ValentineClubTests.swift */; };
 		A35C87E7277E3233009B5788 /* ValentineClubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35C87E6277E3233009B5788 /* ValentineClubUITests.swift */; };
 		A35C87E9277E3233009B5788 /* ValentineClubUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35C87E8277E3233009B5788 /* ValentineClubUITestsLaunchTests.swift */; };
+		A38DF07E27C04CAD006D830A /* GameNightVoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38DF07D27C04CAD006D830A /* GameNightVoteViewController.swift */; };
 		A3D08784278158DD00E178E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D08779278158DD00E178E6 /* AppDelegate.swift */; };
 		A3D08785278158DE00E178E6 /* TransactionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D0877A278158DD00E178E6 /* TransactionTableViewController.swift */; };
 		A3D08786278158DE00E178E6 /* UserSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D0877B278158DD00E178E6 /* UserSelectViewController.swift */; };
@@ -33,6 +34,8 @@
 		A3D9FB8A279E31AC00DE4688 /* GroupRoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D9FB89279E31AB00DE4688 /* GroupRoleViewController.swift */; };
 		A3D9FB8C279E66E800DE4688 /* RoleMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D9FB8B279E66E800DE4688 /* RoleMapper.swift */; };
 		A3D9FB8E279E688500DE4688 /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D9FB8D279E688500DE4688 /* Role.swift */; };
+		A3DB442227BC778D0014979F /* RadioButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DB442027BC778D0014979F /* RadioButtonTableViewCell.swift */; };
+		A3DB442327BC778D0014979F /* RadioButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3DB442127BC778D0014979F /* RadioButtonTableViewCell.xib */; };
 		A3E310182798C2A700D87B73 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E310172798C2A700D87B73 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +78,7 @@
 		A35C87E2277E3233009B5788 /* ValentineClubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ValentineClubUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A35C87E6277E3233009B5788 /* ValentineClubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValentineClubUITests.swift; sourceTree = "<group>"; };
 		A35C87E8277E3233009B5788 /* ValentineClubUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValentineClubUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A38DF07D27C04CAD006D830A /* GameNightVoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameNightVoteViewController.swift; sourceTree = "<group>"; };
 		A3D08779278158DD00E178E6 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3D0877A278158DD00E178E6 /* TransactionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionTableViewController.swift; sourceTree = "<group>"; };
 		A3D0877B278158DD00E178E6 /* UserSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSelectViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +91,8 @@
 		A3D9FB89279E31AB00DE4688 /* GroupRoleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupRoleViewController.swift; sourceTree = "<group>"; };
 		A3D9FB8B279E66E800DE4688 /* RoleMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleMapper.swift; sourceTree = "<group>"; };
 		A3D9FB8D279E688500DE4688 /* Role.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
+		A3DB442027BC778D0014979F /* RadioButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonTableViewCell.swift; sourceTree = "<group>"; };
+		A3DB442127BC778D0014979F /* RadioButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RadioButtonTableViewCell.xib; sourceTree = "<group>"; };
 		A3E310172798C2A700D87B73 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A80B3F8B76E9EF5A6E6AB8EF /* Pods-ValentineClub-ValentineClubUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ValentineClub-ValentineClubUITests.debug.xcconfig"; path = "Target Support Files/Pods-ValentineClub-ValentineClubUITests/Pods-ValentineClub-ValentineClubUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B61C710A91BB8BA6B013A729 /* Pods_ValentineClub_ValentineClubUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ValentineClub_ValentineClubUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,6 +178,9 @@
 				A35C87C5277E3230009B5788 /* AppDelegate.swift */,
 				A35C87C7277E3230009B5788 /* SceneDelegate.swift */,
 				A35C87CB277E3230009B5788 /* Main.storyboard */,
+				A38DF07D27C04CAD006D830A /* GameNightVoteViewController.swift */,
+				A3DB442027BC778D0014979F /* RadioButtonTableViewCell.swift */,
+				A3DB442127BC778D0014979F /* RadioButtonTableViewCell.xib */,
 				A3D9FB89279E31AB00DE4688 /* GroupRoleViewController.swift */,
 				A3E310172798C2A700D87B73 /* HomeViewController.swift */,
 				A35C87CE277E3232009B5788 /* Assets.xcassets */,
@@ -324,6 +333,7 @@
 				A35C87D2277E3232009B5788 /* LaunchScreen.storyboard in Resources */,
 				A35C87CF277E3232009B5788 /* Assets.xcassets in Resources */,
 				A35C87CD277E3230009B5788 /* Main.storyboard in Resources */,
+				A3DB442327BC778D0014979F /* RadioButtonTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,11 +464,13 @@
 				A3D08784278158DD00E178E6 /* AppDelegate.swift in Sources */,
 				A35BBF4927991DDF00613A73 /* TransactionType.swift in Sources */,
 				A3D9FB8E279E688500DE4688 /* Role.swift in Sources */,
+				A3DB442227BC778D0014979F /* RadioButtonTableViewCell.swift in Sources */,
 				A3D0878C278158DE00E178E6 /* BankViewController.swift in Sources */,
 				A35C87C6277E3230009B5788 /* AppDelegate.swift in Sources */,
 				A3D9FB8A279E31AC00DE4688 /* GroupRoleViewController.swift in Sources */,
 				A3D08786278158DE00E178E6 /* UserSelectViewController.swift in Sources */,
 				A32195E1278B9B1F0037AC3C /* AccountDao.swift in Sources */,
+				A38DF07E27C04CAD006D830A /* GameNightVoteViewController.swift in Sources */,
 				A3D9FB88279CEA2400DE4688 /* RootViewController.swift in Sources */,
 				A3E310182798C2A700D87B73 /* HomeViewController.swift in Sources */,
 				A3D08789278158DE00E178E6 /* TransactionViewController.swift in Sources */,
