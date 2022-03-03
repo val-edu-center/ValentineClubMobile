@@ -40,7 +40,7 @@ class GameNightVoteViewController: UIViewController, UITableViewDataSource, UITa
         gameNightVotesQuery.whereKey("username", equalTo: PFUser.current()!.username!)
         do {
             let userVotes = try gameNightVotesQuery.findObjects()
-            let userVoteMap = loadUserVoteMap(userVotes: userVotes)
+            userVoteMap = loadUserVoteMap(userVotes: userVotes)
             oldUserVoteMap = userVoteMap
             oldUserVotes = userVotes
         } catch {
