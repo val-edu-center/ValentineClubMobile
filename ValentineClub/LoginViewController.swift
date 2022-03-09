@@ -11,11 +11,15 @@ import Parse
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var roleSegment: UISegmentedControl!
+    
     @IBOutlet weak var usernameField: UITextField!
+    @IBOutlet weak var usernameLabel: UILabel!
+    
+    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var passwordLabel: UILabel!
     
     @IBOutlet weak var logoDarkView: UIImageView!
     @IBOutlet weak var logoLightView: UIImageView!
-    @IBOutlet weak var passwordField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,21 +59,52 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    @IBAction func onRoleSegmentChange(_ sender: Any) {
+        let role = roleSegment.titleForSegment(at: roleSegment.selectedSegmentIndex)
+        if (role!.elementsEqual("Cadet") || role!.elementsEqual("Prep")) {
+            usernameLabel.text = "First Name"
+            passwordLabel.text = "Last Name"
+        } else {
+            usernameLabel.text = "Username"
+            passwordLabel.text = "Password"
+        }
+    }
+    
     @IBAction func onSignIn(_ sender: Any) {
         signIn()
     }
     
     private func signIn() {
-        let username = usernameField.text!
-        let password = passwordField.text!
-
-        PFUser.logInWithUsername(inBackground: username, password: password) { (user, error) in
-            if (user != nil) {
-                self.usernameField.text = ""
-                self.passwordField.text = ""
-                self.performSegue(withIdentifier: "loginSegue", sender: nil)
-            } else {
-                print("Sign in error: \(error?.localizedDescription)")
+        let role = roleSegment.titleForSegment(at: roleSegment.selectedSegmentIndex)
+        
+        if (role!.elementsEqual("Cadet") || role!.elementsEqual("Prep")) {
+            let firstName = usernameField.text!.components(separatedBy: .whitespaces).joined()
+            let lastName = passwordField.text!.components(separatedBy: .whitespaces).joined()
+      
+            let username = "\(firstName.lowercased()).\(lastName.lowercased()).\(role!.lowercased())"
+            let password = "\(firstName.lowercased())!@!\(role!.lowercased())#$#\(lastName.lowercased())"
+            
+            PFUser.logInWithUsername(inBackground: username, password: password) { (user, error) in
+                if (user != nil) {
+                    self.usernameField.text = ""
+                    self.passwordField.text = ""
+                    self.performSegue(withIdentifier: "loginSegue", sender: nil)
+                } else {
+                    ErrorMessenger.showErrorMessage(action: "Sign in", error: error, view: self.view)
+                }
+            }
+        } else {
+            let username = usernameField.text!
+            let password = passwordField.text!
+            
+            PFUser.logInWithUsername(inBackground: username, password: password) { (user, error) in
+                if (user != nil) {
+                    self.usernameField.text = ""
+                    self.passwordField.text = ""
+                    self.performSegue(withIdentifier: "loginSegue", sender: nil)
+                } else {
+                    ErrorMessenger.showErrorMessage(action: "Sign in", error: error, view: self.view)
+                }
             }
         }
     }
@@ -97,7 +132,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             if success {
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
             } else {
-                print("Sign up error: \(error?.localizedDescription)")
+                ErrorMessenger.showErrorMessage(action: "Sign up", error: error, view: self.view)
             }
         }
     }
