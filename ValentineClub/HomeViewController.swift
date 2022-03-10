@@ -7,6 +7,7 @@
 
 import UIKit
 import Parse
+import Toast_Swift
 
 class HomeViewController: UIViewController {
 

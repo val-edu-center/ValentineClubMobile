@@ -8,6 +8,7 @@ target 'ValentineClub' do
   # Pods for ValentineClub
 
   pod 'Parse'
+  pod 'Toast-Swift', '~> 5.0.1'
 
   target 'ValentineClubTests' do
     inherit! :search_paths

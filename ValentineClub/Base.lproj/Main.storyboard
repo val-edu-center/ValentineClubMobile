@@ -38,8 +38,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Role (Only used for Sign Up)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7uX-Yz-Zpt">
-                                <rect key="frame" x="53.5" y="450" width="216" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Role" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7uX-Yz-Zpt">
+                                <rect key="frame" x="53.5" y="450" width="34" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -78,7 +78,7 @@
                                     <action selector="onSignUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gek-cf-uwr"/>
                                 </connections>
                             </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jBS-zM-C4N">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="jBS-zM-C4N">
                                 <rect key="frame" x="53.5" y="479" width="307" height="32"/>
                                 <segments>
                                     <segment title="Cadet"/>
@@ -88,6 +88,9 @@
                                     <segment title="Teen"/>
                                     <segment title="Staff"/>
                                 </segments>
+                                <connections>
+                                    <action selector="onRoleSegmentChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="85Z-yG-fAO"/>
+                                </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNP-gb-sCI">
                                 <rect key="frame" x="53.5" y="550" width="120" height="30"/>
@@ -144,8 +147,10 @@
                         <outlet property="logoDarkView" destination="CoZ-N3-Eul" id="QUo-Db-fux"/>
                         <outlet property="logoLightView" destination="Qri-Ko-DXR" id="7Mh-bS-od5"/>
                         <outlet property="passwordField" destination="QeP-Xq-vWD" id="YlL-zx-A4K"/>
+                        <outlet property="passwordLabel" destination="wIV-Yl-mY1" id="SiU-OK-1Uv"/>
                         <outlet property="roleSegment" destination="jBS-zM-C4N" id="chE-by-m9G"/>
                         <outlet property="usernameField" destination="vOc-ff-d2T" id="Ylo-zp-xkx"/>
+                        <outlet property="usernameLabel" destination="cpm-rD-e23" id="ZDG-kc-d3j"/>
                         <segue destination="mSp-Zq-0B2" kind="presentation" identifier="loginSegue" modalPresentationStyle="fullScreen" id="Qbr-Ot-saM"/>
                     </connections>
                 </viewController>
