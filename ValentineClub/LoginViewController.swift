@@ -64,9 +64,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         if (role!.elementsEqual("Cadet") || role!.elementsEqual("Prep")) {
             usernameLabel.text = "First Name"
             passwordLabel.text = "Last Name"
+            passwordField.isSecureTextEntry = false
         } else {
             usernameLabel.text = "Username"
             passwordLabel.text = "Password"
+            passwordField.isSecureTextEntry = true
         }
     }
     
