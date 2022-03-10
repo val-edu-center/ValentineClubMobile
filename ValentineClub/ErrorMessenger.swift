@@ -9,11 +9,13 @@ import Foundation
 import Toast_Swift
 
 struct ErrorMessenger {
+    
+    private static var style = ToastStyle()
+    
     static func showErrorMessage(action: String, error: Error?, view: UIView){
         let message = error != nil ? "\(action) error: \(error!.localizedDescription)" : "\(action) error"
         
         // create a new style
-        var style = ToastStyle()
 
         // this is just one of many style options
         style.backgroundColor = .red
