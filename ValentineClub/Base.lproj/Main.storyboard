@@ -507,6 +507,7 @@
                                 <connections>
                                     <outlet property="amountLabel" destination="FjP-3y-bnU" id="MGb-RJ-38f"/>
                                     <outlet property="descriptionLabel" destination="vrs-mL-qod" id="7JZ-d8-Srk"/>
+                                    <segue destination="jpg-bI-1Pg" kind="show" id="2Yl-2K-rtL"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -725,6 +726,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q0c-4h-gOX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1764" y="2225"/>
+        </scene>
+        <!--Transaction Details View Controller-->
+        <scene sceneID="Wfd-YF-6Dl">
+            <objects>
+                <viewController id="jpg-bI-1Pg" customClass="TransactionDetailsViewController" customModule="ValentineClub" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="J15-yW-sAQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Other Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j2G-Uu-txI">
+                                <rect key="frame" x="152" y="117" width="111" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnJ-nn-j2T">
+                                <rect key="frame" x="177" y="247" width="60" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gd3-uv-d9Q"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="OSX-Dq-BFf"/>
+                    <connections>
+                        <outlet property="amountLabel" destination="xnJ-nn-j2T" id="rGN-8V-J6R"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vcT-RN-Eb2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2869" y="2245"/>
         </scene>
         <!--Confirmation View Controller-->
         <scene sceneID="kRY-nY-hky">

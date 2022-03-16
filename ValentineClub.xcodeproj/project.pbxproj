@@ -38,6 +38,7 @@
 		A3DB442227BC778D0014979F /* RadioButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DB442027BC778D0014979F /* RadioButtonTableViewCell.swift */; };
 		A3DB442327BC778D0014979F /* RadioButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3DB442127BC778D0014979F /* RadioButtonTableViewCell.xib */; };
 		A3E310182798C2A700D87B73 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E310172798C2A700D87B73 /* HomeViewController.swift */; };
+		A3E553D927E252DA00D92CD9 /* TransactionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E553D827E252DA00D92CD9 /* TransactionDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		A3DB442027BC778D0014979F /* RadioButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonTableViewCell.swift; sourceTree = "<group>"; };
 		A3DB442127BC778D0014979F /* RadioButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RadioButtonTableViewCell.xib; sourceTree = "<group>"; };
 		A3E310172798C2A700D87B73 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		A3E553D827E252DA00D92CD9 /* TransactionDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsViewController.swift; sourceTree = "<group>"; };
 		A80B3F8B76E9EF5A6E6AB8EF /* Pods-ValentineClub-ValentineClubUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ValentineClub-ValentineClubUITests.debug.xcconfig"; path = "Target Support Files/Pods-ValentineClub-ValentineClubUITests/Pods-ValentineClub-ValentineClubUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B61C710A91BB8BA6B013A729 /* Pods_ValentineClub_ValentineClubUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ValentineClub_ValentineClubUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8614A5A67206408B62E3DCF /* Pods_ValentineClubTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ValentineClubTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -180,6 +182,7 @@
 				A35C87C5277E3230009B5788 /* AppDelegate.swift */,
 				A35C87C7277E3230009B5788 /* SceneDelegate.swift */,
 				A35C87CB277E3230009B5788 /* Main.storyboard */,
+				A3E553D827E252DA00D92CD9 /* TransactionDetailsViewController.swift */,
 				A38DF07D27C04CAD006D830A /* GameNightVoteViewController.swift */,
 				A3DB442027BC778D0014979F /* RadioButtonTableViewCell.swift */,
 				A3DB442127BC778D0014979F /* RadioButtonTableViewCell.xib */,
@@ -472,6 +475,7 @@
 				A35C87C6277E3230009B5788 /* AppDelegate.swift in Sources */,
 				A3D9FB8A279E31AC00DE4688 /* GroupRoleViewController.swift in Sources */,
 				A3BA776227D8309F00450D3F /* ErrorMessenger.swift in Sources */,
+				A3E553D927E252DA00D92CD9 /* TransactionDetailsViewController.swift in Sources */,
 				A3D08786278158DE00E178E6 /* UserSelectViewController.swift in Sources */,
 				A32195E1278B9B1F0037AC3C /* AccountDao.swift in Sources */,
 				A38DF07E27C04CAD006D830A /* GameNightVoteViewController.swift in Sources */,
