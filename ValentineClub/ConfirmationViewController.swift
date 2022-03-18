@@ -10,8 +10,8 @@ import Parse
 
 class ConfirmationViewController: UIViewController {
     
+    @IBOutlet weak var descriptionField: UITextField!
     @IBOutlet weak var promptLabel: UILabel!
-    
     @IBOutlet weak var amountLabel: UILabel!
     
     var transactionType: TransactionType!
@@ -43,12 +43,11 @@ class ConfirmationViewController: UIViewController {
                 print("Error: Not a valid transaction type")
         }
         if (isCurrentUserTarget || transactionType == TransactionType.Send) {
-            amountLabel.text = "- $" + amount.description + "\nNew Account Balance: $" + newAccountBalance.description
+            amountLabel.text = "New Account Balance: $" + newAccountBalance.description
         } else {
             let oldTargetAccountBalance = selectedUserAccount!["balance"] as! Int
             let newTargetAccountBalance = oldTargetAccountBalance - amount
-            amountLabel.text = "- $" + amount.description + "\nNew Account Balance for "
-            + selectedUser! + ": $" + newTargetAccountBalance.description
+            amountLabel.text = "New Account Balance for " + selectedUser! + ": $" + newTargetAccountBalance.description
         }
     }
     
@@ -75,6 +74,7 @@ class ConfirmationViewController: UIViewController {
         parseObject["username"] = PFUser.current()!.username!
         parseObject["transactionType"] = transactionType.rawValue
         parseObject["amount"] = amount
+        parseObject["description"] = descriptionField.text
         if (selectedUser != nil) {
             parseObject["targetUsername"] = selectedUser
         }
@@ -129,7 +129,18 @@ class ConfirmationViewController: UIViewController {
         }
     }
     
-
+    @IBAction func quickAdd1(_ sender: Any) {
+        descriptionField.text = "Attendance"
+    }
+    
+    @IBAction func quickAdd2(_ sender: Any) {
+        descriptionField.text = "Good Behavior"
+    }
+    
+    @IBAction func quickAdd3(_ sender: Any) {
+        descriptionField.text = "3D Print"
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -19,7 +19,7 @@ class UserSelectViewController: UIViewController, UIPickerViewDelegate, UIPicker
     var selectedUser: String?
     var bankController: BankViewController!
     
-    var pickerData: [String] = [String]()
+    var pickerData: [PFUser] = [PFUser]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,11 +29,11 @@ class UserSelectViewController: UIViewController, UIPickerViewDelegate, UIPicker
         currentUsername = PFUser.current()!.username!
         do {
             let users = try PFUser.query()!.findObjects() as! [PFUser]
-            pickerData = users.compactMap {$0.username}.filter({ username in
-                !username.elementsEqual(currentUsername) || transactionType == TransactionType.Withdraw
+            pickerData = users.filter({ user in
+                !(user.username?.elementsEqual(currentUsername) ?? false) || transactionType == TransactionType.Withdraw
             })
             if (!pickerData.isEmpty) {
-                selectedUser = pickerData[0]
+                selectedUser = pickerData[0].username
             }
         } catch {
             print("User retrieval error: \(error.localizedDescription)")
@@ -71,14 +71,20 @@ class UserSelectViewController: UIViewController, UIPickerViewDelegate, UIPicker
     
     // The data to return for the row and component (column) that's being passed in
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData[row]
+        return getName(user: pickerData[row])
     }
     
     // Capture the picker view selection
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         // This method is triggered whenever the user makes a change to the picker selection.
         // The parameter named row and component represents what was selected.
-        selectedUser = pickerData[row]
+        selectedUser = getName(user: pickerData[row])
+    }
+    
+    private func getName(user: PFUser) -> String {
+        let name = user["firstName"] as? String
+        let username = user.username!
+        return name == nil ? username : name!
     }
     /*
     // MARK: - Navigation

@@ -57,42 +57,40 @@ extension  TransactionTableViewController {
         let targetUsername = transaction["targetUsername"] as? String
         let transactionType = transaction["transactionType"] as! String
         let username = transaction["username"] as! String
-        
+        let description = transaction["description"] as? String
         switch TransactionType(rawValue: transactionType) {
             case .Send:
                 if (username.elementsEqual(currentUsername)) {
                     cell.amountLabel.textColor = UIColor.systemRed
                     cell.amountLabel.text = "- $" + amount.description
-                    cell.descriptionLabel.text = "Sent to " + targetUsername!
+                    cell.descriptionLabel.text = description ?? "Sent to " + targetUsername!
                 } else {
                     cell.amountLabel.textColor = UIColor.systemGreen
                     cell.amountLabel.text = "+ $" + amount.description
-                    cell.descriptionLabel.text = "Sent from " + username
+                    cell.descriptionLabel.text = description ?? "Sent from " + username
                 }
             case .Withdraw:
                 cell.amountLabel.textColor = UIColor.systemRed
                 cell.amountLabel.text = "- $" + amount.description
                 if (username.elementsEqual(currentUsername)) {
-                    cell.descriptionLabel.text = "Withdrawal"
+                    cell.descriptionLabel.text = description ?? "Withdrawal"
                 } else {
-                    cell.descriptionLabel.text = "Withdrawal by " + username
+                    cell.descriptionLabel.text = description ?? "Withdrawal by " + username
                 }
             default:
                 cell.amountLabel.text = amount.description
-                cell.descriptionLabel.text = "Unsure how to describe"
+                cell.descriptionLabel.text = description ?? "Unsure how to describe"
         }
         
         return cell
         
     }
     
-    
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let cell = sender as! UITableViewCell
         let indexPath = tableView.indexPath(for: cell)!
         let transaction = transactions[indexPath.row]
-        
+        let transactionType = transaction["transactionType"] as! String
         let transactionDetailsViewController = segue.destination as! TransactionDetailsViewController
         transactionDetailsViewController.transaction = transaction
         
