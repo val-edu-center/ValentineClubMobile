@@ -22,6 +22,7 @@ class TransactionTableViewController: UITableViewController {
         targetUsernameQuery.whereKey("targetUsername", equalTo: currentUsername)
 
         let query = PFQuery.orQuery(withSubqueries: [usernameQuery, targetUsernameQuery])
+        query.order(byDescending: "createdAt")
         
         do {
             try transactions = query.findObjects().filter({ transaction in
