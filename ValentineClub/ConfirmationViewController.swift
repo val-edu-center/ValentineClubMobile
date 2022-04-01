@@ -49,6 +49,14 @@ class ConfirmationViewController: UIViewController {
             let newTargetAccountBalance = oldTargetAccountBalance - amount
             amountLabel.text = "New Account Balance for " + selectedUser! + ": $" + newTargetAccountBalance.description
         }
+        
+        //Looks for single or multiple taps.
+         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+
+        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+        //tap.cancelsTouchesInView = false
+
+        view.addGestureRecognizer(tap)
     }
     
     @IBAction func submit(_ sender: Any) {
@@ -66,6 +74,17 @@ class ConfirmationViewController: UIViewController {
     
     @IBAction func cancel(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    //Calls this function when the tap is recognized.
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+
+        return true
     }
     
     private func createTransaction() {
