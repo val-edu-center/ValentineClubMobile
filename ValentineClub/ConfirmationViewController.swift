@@ -21,23 +21,24 @@ class ConfirmationViewController: UIViewController {
     var amount: Int!
     var newAccountBalance: Int!
     var selectedUser: String?
-    var selectedUserAccount: PFObject?
+    var selectedUserAccount: PFUser!
     
     var isCurrentUserTarget = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
         let currentUsername = PFUser.current()!.username!
-        isCurrentUserTarget = selectedUser?.elementsEqual(currentUsername) ?? false
+        //TODO address if object equals would be better here
+        isCurrentUserTarget =  selectedUserAccount.username?.elementsEqual(currentUsername) ?? false
         
         switch transactionType {
             case .Send:
-                promptLabel.text = "Confirm Amount to Send to " + selectedUser!
+            promptLabel.text = "Confirm Amount to Send to " + UserService.getName(user: selectedUserAccount)
             case .Withdraw:
                 if (isCurrentUserTarget) {
                     promptLabel.text = "Confirm Amount to Withdraw"
                 } else {
-                    promptLabel.text = "Confirm Amount to Withdraw from " + selectedUser!
+                    promptLabel.text = "Confirm Amount to Withdraw from " + UserService.getName(user: selectedUserAccount)
                 }
             default:
                 print("Error: Not a valid transaction type")
@@ -94,9 +95,7 @@ class ConfirmationViewController: UIViewController {
         parseObject["transactionType"] = transactionType.rawValue
         parseObject["amount"] = amount
         parseObject["description"] = descriptionField.text
-        if (selectedUser != nil) {
-            parseObject["targetUsername"] = selectedUser
-        }
+        parseObject["targetUsername"] = selectedUserAccount.username
 
         // Saves the new object.
         parseObject.saveInBackground {

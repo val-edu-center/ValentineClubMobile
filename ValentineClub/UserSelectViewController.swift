@@ -16,6 +16,7 @@ class UserSelectViewController: UIViewController, UIPickerViewDelegate, UIPicker
     var newAccountBalance: Int!
     var amount: Int!
     var userAccount: PFObject!
+    var selectedUserAccount: PFUser!
     var selectedUser: String?
     var bankController: BankViewController!
     
@@ -49,8 +50,8 @@ class UserSelectViewController: UIViewController, UIPickerViewDelegate, UIPicker
         vc.newAccountBalance = self.newAccountBalance
         vc.amount = self.amount
         vc.selectedUser = self.selectedUser
-        vc.selectedUserAccount = selectedUserAccount
-        vc.userAccount = self.userAccount
+        vc.selectedUserAccount = self.selectedUserAccount
+        vc.userAccount = self.userAccount     
         vc.bankController = self.bankController
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true, completion: nil)
@@ -71,20 +72,15 @@ class UserSelectViewController: UIViewController, UIPickerViewDelegate, UIPicker
     
     // The data to return for the row and component (column) that's being passed in
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return getName(user: pickerData[row])
+        return UserService.getName(user: pickerData[row])
     }
     
     // Capture the picker view selection
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         // This method is triggered whenever the user makes a change to the picker selection.
         // The parameter named row and component represents what was selected.
-        selectedUser = getName(user: pickerData[row])
-    }
-    
-    private func getName(user: PFUser) -> String {
-        let name = user["firstName"] as? String
-        let username = user.username!
-        return name == nil ? username : name!
+        selectedUser = pickerData[row].username
+        selectedUserAccount = pickerData[row]
     }
     /*
     // MARK: - Navigation
