@@ -22,6 +22,7 @@ class ConfirmationViewController: UIViewController {
     var newAccountBalance: Int!
     var selectedUser: String?
     var selectedUserAccount: PFUser!
+    var selectedUserBankAccount: PFObject!
     
     var isCurrentUserTarget = false
 
@@ -46,7 +47,7 @@ class ConfirmationViewController: UIViewController {
         if (isCurrentUserTarget || transactionType == TransactionType.Send) {
             amountLabel.text = "New Account Balance: $" + newAccountBalance.description
         } else {
-            let oldTargetAccountBalance = selectedUserAccount!["balance"] as! Int
+            let oldTargetAccountBalance = selectedUserBankAccount!["balance"] as! Int
             let newTargetAccountBalance = oldTargetAccountBalance - amount
             amountLabel.text = "New Account Balance for " + selectedUser! + ": $" + newTargetAccountBalance.description
         }
@@ -67,7 +68,7 @@ class ConfirmationViewController: UIViewController {
             bankController.balanceLabel.text = "$ " + newAccountBalance.description
             bankController.setAccountBalance(balance: newAccountBalance)
         }
-        if (selectedUserAccount != nil) {
+        if (selectedUserBankAccount != nil) {
             updateTargetAccount()
         }
         bankController.dismiss(animated: true, completion: nil)
@@ -125,19 +126,19 @@ class ConfirmationViewController: UIViewController {
     private func updateTargetAccount() {
         switch transactionType {
             case .Send:
-                let oldTargetAccountBalance = selectedUserAccount!["balance"] as! Int
+                let oldTargetAccountBalance = selectedUserBankAccount["balance"] as! Int
                 let newTargetAccountBalance = oldTargetAccountBalance + amount
-                selectedUserAccount!["balance"] = newTargetAccountBalance
+                selectedUserBankAccount!["balance"] = newTargetAccountBalance
             case .Withdraw:
-                let oldTargetAccountBalance = selectedUserAccount!["balance"] as! Int
+                let oldTargetAccountBalance = selectedUserBankAccount!["balance"] as! Int
                 let newTargetAccountBalance = oldTargetAccountBalance - amount
-                selectedUserAccount!["balance"] = newTargetAccountBalance
+                selectedUserBankAccount!["balance"] = newTargetAccountBalance
             default:
                return
         }
 
         // Saves the new object.
-        selectedUserAccount!.saveInBackground {
+        selectedUserBankAccount!.saveInBackground {
           (success: Bool, error: Error?) in
           if (success) {
             // The object has been saved.

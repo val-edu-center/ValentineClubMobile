@@ -35,6 +35,7 @@ class UserSelectViewController: UIViewController, UIPickerViewDelegate, UIPicker
             })
             if (!pickerData.isEmpty) {
                 selectedUser = pickerData[0].username
+                selectedUserAccount = pickerData[0]
             }
         } catch {
             print("User retrieval error: \(error.localizedDescription)")
@@ -44,13 +45,14 @@ class UserSelectViewController: UIViewController, UIPickerViewDelegate, UIPicker
     } // Number of columns of data
     
     @IBAction func submit(_ sender: Any) {
-        let selectedUserAccount = AccountDao.getAccount(username: self.selectedUser!)
+        let selectedUserBankAccount = AccountDao.getAccount(username: self.selectedUser!)
         let vc = storyboard?.instantiateViewController(withIdentifier: "confirmationView") as! ConfirmationViewController
         vc.transactionType = self.transactionType
         vc.newAccountBalance = self.newAccountBalance
         vc.amount = self.amount
         vc.selectedUser = self.selectedUser
         vc.selectedUserAccount = self.selectedUserAccount
+        vc.selectedUserBankAccount = selectedUserBankAccount
         vc.userAccount = self.userAccount     
         vc.bankController = self.bankController
         vc.modalPresentationStyle = .fullScreen

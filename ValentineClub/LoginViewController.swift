@@ -116,6 +116,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let user = PFUser()
         user.username = usernameField.text
         user.password = passwordField.text
+    
+        if (role!.elementsEqual("Cadet") || role!.elementsEqual("Prep")) {
+            let firstName = usernameField.text!.components(separatedBy: .whitespaces).joined()
+            let lastName = passwordField.text!.components(separatedBy: .whitespaces).joined()
+      
+            user.username = "\(firstName.lowercased()).\(lastName.lowercased()).\(role!.lowercased())"
+            user.password = "\(firstName.lowercased())!@!\(role!.lowercased())#$#\(lastName.lowercased())"
+        }
+        
         user.setValue([role], forKey: "roles")
         user.setValue(false, forKey: "isApproved")
         
@@ -137,6 +146,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 ErrorMessenger.showErrorMessage(action: "Sign up", error: error, view: self.view)
             }
         }
+        
     }
 
 }
