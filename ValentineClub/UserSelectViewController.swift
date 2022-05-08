@@ -21,18 +21,28 @@ class UserSelectViewController: UIViewController, UIPickerViewDelegate, UIPicker
     var bankController: BankViewController!
     
     var pickerData: [PFUser] = [PFUser]()
+    var dictionary: Dictionary<Role?, [PFUser]>?
+    var availableRoles: [Role] = [Role]()
+    var selectedRole: Role = Role.Cadet
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.userSelector.delegate = self
         self.userSelector.dataSource = self
         
+        selectedRole = RoleMapper.getGroupRole(user: PFUser.current()!) ?? Role.Cadet
         currentUsername = PFUser.current()!.username!
         do {
             let users = try PFUser.query()!.findObjects() as! [PFUser]
             pickerData = users.filter({ user in
                 !(user.username?.elementsEqual(currentUsername) ?? false) || transactionType == TransactionType.Withdraw
             })
+            dictionary = Dictionary(grouping: users, by: { RoleMapper.getGroupRole(user: $0) })
+            for key in dictionary!.keys {
+                if key != nil {
+                    availableRoles.append(key!)
+                }
+            }
             if (!pickerData.isEmpty) {
                 selectedUser = pickerData[0].username
                 selectedUserAccount = pickerData[0]
@@ -64,25 +74,47 @@ class UserSelectViewController: UIViewController, UIPickerViewDelegate, UIPicker
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+        return 2
     }
     
     // The number of rows of data
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerData.count
+        if component == 0 {
+            return availableRoles.count
+        } else {
+            return dictionary?[selectedRole]?.count ?? 0
+        }
     }
     
-    // The data to return for the row and component (column) that's being passed in
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return UserService.getName(user: pickerData[row])
+        if component == 0 {
+            return availableRoles[row].rawValue
+        } else {
+            let users = dictionary?[selectedRole] ?? []
+            if (users.isEmpty) {
+                return nil
+            } else {
+                return UserService.getName(user: users[row])
+            }
+        }
     }
     
     // Capture the picker view selection
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         // This method is triggered whenever the user makes a change to the picker selection.
         // The parameter named row and component represents what was selected.
-        selectedUser = pickerData[row].username
-        selectedUserAccount = pickerData[row]
+        
+        if component == 0 {
+            selectedRole = availableRoles[row]
+        } else {
+            let users = dictionary?[selectedRole] ?? []
+            if (!users.isEmpty) {
+                selectedUser = users[row].username
+                selectedUserAccount = users[row]
+            }
+        }
+        
+        userSelector.reloadComponent(1)
     }
     /*
     // MARK: - Navigation

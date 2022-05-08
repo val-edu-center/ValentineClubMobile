@@ -10,9 +10,10 @@ import Parse
 
 struct UserService {
     static func getName(user: PFUser) -> String {
-        let name = user["firstName"] as? String
+        let firstName = user["firstName"] as? String ?? ""
+        let lastName = user["lastName"] as? String ?? ""
         let username = user.username!
-        return name == nil ? username : name!
+        return (firstName == "" && lastName == "") ? username : firstName + " " + lastName
     }
 }
 
