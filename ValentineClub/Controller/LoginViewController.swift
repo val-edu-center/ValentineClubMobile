@@ -11,12 +11,12 @@ import Parse
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var roleSegment: UISegmentedControl!
-    
-    @IBOutlet weak var usernameField: UITextField!
-    @IBOutlet weak var usernameLabel: UILabel!
-    
-    @IBOutlet weak var passwordField: UITextField!
-    @IBOutlet weak var passwordLabel: UILabel!
+    //First field can be used for first name or username
+    @IBOutlet weak var firstField: UITextField!
+    @IBOutlet weak var firstLabel: UILabel!
+    //Second field can be used for last name or password
+    @IBOutlet weak var secondField: UITextField!
+    @IBOutlet weak var secondLabel: UILabel!
     
     @IBOutlet weak var logoDarkView: UIImageView!
     @IBOutlet weak var logoLightView: UIImageView!
@@ -32,18 +32,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             logoDarkView.isHidden = false
         }
         
-        
-        self.usernameField.delegate = self
-        self.passwordField.delegate = self
+        self.firstField.delegate = self
+        self.secondField.delegate = self
         //Looks for single or multiple taps.
          let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
 
         //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
         //tap.cancelsTouchesInView = false
-
         view.addGestureRecognizer(tap)
     }
-    
     //Calls this function when the tap is recognized.
     @objc func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
@@ -51,9 +48,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-
         //textField code
-
         textField.resignFirstResponder()  //if desired
         signIn()
         return true
@@ -62,13 +57,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBAction func onRoleSegmentChange(_ sender: Any) {
         let role = roleSegment.titleForSegment(at: roleSegment.selectedSegmentIndex)
         if (role!.elementsEqual("Cadet") || role!.elementsEqual("Prep")) {
-            usernameLabel.text = "First Name"
-            passwordLabel.text = "Last Name"
-            passwordField.isSecureTextEntry = false
+            firstLabel.text = "First Name"
+            secondLabel.text = "Last Name"
+            secondField.isSecureTextEntry = false
         } else {
-            usernameLabel.text = "Username"
-            passwordLabel.text = "Password"
-            passwordField.isSecureTextEntry = true
+            firstLabel.text = "Username"
+            secondLabel.text = "Password"
+            secondField.isSecureTextEntry = true
         }
     }
     
@@ -80,29 +75,29 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let role = roleSegment.titleForSegment(at: roleSegment.selectedSegmentIndex)
         
         if (role!.elementsEqual("Cadet") || role!.elementsEqual("Prep")) {
-            let firstName = usernameField.text!.components(separatedBy: .whitespaces).joined()
-            let lastName = passwordField.text!.components(separatedBy: .whitespaces).joined()
+            let firstName = firstField.text!.components(separatedBy: .whitespaces).joined()
+            let lastName = secondField.text!.components(separatedBy: .whitespaces).joined()
       
-            let username = "\(firstName.lowercased()).\(lastName.lowercased()).\(role!.lowercased())"
-            let password = "\(firstName.lowercased())!@!\(role!.lowercased())#$#\(lastName.lowercased())"
+            let username = CredentialService.getUsername(firstName: firstName, lastName: lastName, role: role!)
+            let password = CredentialService.getPassword(firstName: firstName, lastName: lastName, role: role!)
             
             PFUser.logInWithUsername(inBackground: username, password: password) { (user, error) in
                 if (user != nil) {
-                    self.usernameField.text = ""
-                    self.passwordField.text = ""
+                    self.firstField.text = ""
+                    self.secondField.text = ""
                     self.performSegue(withIdentifier: "loginSegue", sender: nil)
                 } else {
                     ErrorMessenger.showErrorMessage(action: "Sign in", error: error, view: self.view)
                 }
             }
         } else {
-            let username = usernameField.text!
-            let password = passwordField.text!
+            let username = firstField.text!
+            let password = secondField.text!
             
             PFUser.logInWithUsername(inBackground: username, password: password) { (user, error) in
                 if (user != nil) {
-                    self.usernameField.text = ""
-                    self.passwordField.text = ""
+                    self.firstField.text = ""
+                    self.secondField.text = ""
                     self.performSegue(withIdentifier: "loginSegue", sender: nil)
                 } else {
                     ErrorMessenger.showErrorMessage(action: "Sign in", error: error, view: self.view)
@@ -114,15 +109,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBAction func onSignUp(_ sender: Any) {
         let role = roleSegment.titleForSegment(at: roleSegment.selectedSegmentIndex)
         let user = PFUser()
-        user.username = usernameField.text
-        user.password = passwordField.text
+        user.username = firstField.text
+        user.password = secondField.text
     
         if (role!.elementsEqual("Cadet") || role!.elementsEqual("Prep")) {
-            let firstName = usernameField.text!.components(separatedBy: .whitespaces).joined()
-            let lastName = passwordField.text!.components(separatedBy: .whitespaces).joined()
+            let firstName = firstField.text!.components(separatedBy: .whitespaces).joined()
+            let lastName = secondField.text!.components(separatedBy: .whitespaces).joined()
       
-            user.username = "\(firstName.lowercased()).\(lastName.lowercased()).\(role!.lowercased())"
-            user.password = "\(firstName.lowercased())!@!\(role!.lowercased())#$#\(lastName.lowercased())"
+            user.username = CredentialService.getUsername(firstName: firstName, lastName: lastName, role: role!)
+            user.password = CredentialService.getPassword(firstName: firstName, lastName: lastName, role: role!)
         }
         
         user.setValue([role], forKey: "roles")

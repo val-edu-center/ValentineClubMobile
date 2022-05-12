@@ -8,13 +8,16 @@
 import UIKit
 import Parse
 
-var transactions: [PFObject] = [PFObject]()
-var currentUsername = ""
 
 class TransactionTableViewController: UITableViewController {
     
+    var transactions: [PFObject] = [PFObject]()
+    var currentUsername = ""
+    
     override func viewDidLoad() {
         currentUsername = PFUser.current()!.username!
+        
+        //TODO Move to Dao
         let usernameQuery = PFQuery(className:"Transactions")
         usernameQuery.whereKey("username", equalTo: currentUsername)
 

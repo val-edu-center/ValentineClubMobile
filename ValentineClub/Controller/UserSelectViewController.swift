@@ -16,37 +16,38 @@ class UserSelectViewController: UIViewController, UIPickerViewDelegate, UIPicker
     var newAccountBalance: Int!
     var amount: Int!
     var userAccount: PFObject!
+    
     var selectedUserAccount: PFUser!
     var selectedUser: String?
-    var bankController: BankViewController!
+    var selectedRole: Role!
     
-    var pickerData: [PFUser] = [PFUser]()
-    var dictionary: Dictionary<Role?, [PFUser]>?
-    var availableRoles: [Role] = [Role]()
-    var selectedRole: Role = Role.Cadet
+    var bankController: BankViewController!
+    //TODO Make role non optional
+    var pickerData = [Role? : [PFUser]]()
+    var availableRoles = [Role]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.userSelector.delegate = self
         self.userSelector.dataSource = self
         
-        selectedRole = RoleMapper.getGroupRole(user: PFUser.current()!) ?? Role.Cadet
-        currentUsername = PFUser.current()!.username!
         do {
-            let users = try PFUser.query()!.findObjects() as! [PFUser]
-            pickerData = users.filter({ user in
+            let currentUsername = PFUser.current()!.username!
+            //TODO Put in Dao
+            let usersRaw = try PFUser.query()!.findObjects() as! [PFUser]
+            let users = usersRaw.filter({ user in
                 !(user.username?.elementsEqual(currentUsername) ?? false) || transactionType == TransactionType.Withdraw
             })
-            dictionary = Dictionary(grouping: users, by: { RoleMapper.getGroupRole(user: $0) })
-            for key in dictionary!.keys {
+            
+            pickerData = Dictionary(grouping: users, by: { RoleMapper.getGroupRole(user: $0) })
+            for key in pickerData.keys {
                 if key != nil {
                     availableRoles.append(key!)
                 }
             }
-            if (!pickerData.isEmpty) {
-                selectedUser = pickerData[0].username
-                selectedUserAccount = pickerData[0]
-            }
+            
+            selectRoleThenUser(roleIndex: 0, userIndex: 0)
+            
         } catch {
             print("User retrieval error: \(error.localizedDescription)")
         }
@@ -82,7 +83,7 @@ class UserSelectViewController: UIViewController, UIPickerViewDelegate, UIPicker
         if component == 0 {
             return availableRoles.count
         } else {
-            return dictionary?[selectedRole]?.count ?? 0
+            return pickerData[selectedRole]?.count ?? 0
         }
     }
     
@@ -90,7 +91,7 @@ class UserSelectViewController: UIViewController, UIPickerViewDelegate, UIPicker
         if component == 0 {
             return availableRoles[row].rawValue
         } else {
-            let users = dictionary?[selectedRole] ?? []
+            let users = pickerData[selectedRole] ?? []
             if (users.isEmpty) {
                 return nil
             } else {
@@ -105,25 +106,24 @@ class UserSelectViewController: UIViewController, UIPickerViewDelegate, UIPicker
         // The parameter named row and component represents what was selected.
         
         if component == 0 {
-            selectedRole = availableRoles[row]
+            selectRoleThenUser(roleIndex: row, userIndex: 0)
         } else {
-            let users = dictionary?[selectedRole] ?? []
-            if (!users.isEmpty) {
-                selectedUser = users[row].username
-                selectedUserAccount = users[row]
-            }
+            selectRoleThenUser(roleIndex: nil, userIndex: row)
         }
         
         userSelector.reloadComponent(1)
     }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func selectRoleThenUser(roleIndex: Int?, userIndex: Int) {
+        if (!availableRoles.isEmpty && roleIndex != nil) {
+            selectedRole = availableRoles[roleIndex!]
+        }
+        if (!pickerData.isEmpty) {
+            let users = pickerData[selectedRole] ?? []
+            if (!users.isEmpty) {
+                selectedUser = users[userIndex].username
+                selectedUserAccount = users[userIndex]
+            }
+        }
     }
-    */
-
 }

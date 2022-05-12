@@ -34,7 +34,7 @@ class BankViewController: UIViewController {
         loadAccountBalance()
     }
     
-    @IBAction func payNow(_ sender: Any) {
+    @IBAction func send(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "transactionView") as! TransactionViewController
         vc.transactionType = TransactionType.Send
         vc.previousAccountBalance = accountBalance

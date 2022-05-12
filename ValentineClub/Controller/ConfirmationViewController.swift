@@ -49,7 +49,7 @@ class ConfirmationViewController: UIViewController {
         } else {
             let oldTargetAccountBalance = selectedUserBankAccount!["balance"] as! Int
             let newTargetAccountBalance = oldTargetAccountBalance - amount
-            amountLabel.text = "New Account Balance for " + selectedUser! + ": $" + newTargetAccountBalance.description
+            amountLabel.text = "New Account Balance for " + UserService.getName(user: selectedUserAccount) + ": $" + newTargetAccountBalance.description
         }
         
         //Looks for single or multiple taps.
@@ -89,6 +89,7 @@ class ConfirmationViewController: UIViewController {
         return true
     }
     
+    //Move to Dao
     private func createTransaction() {
         var parseObject = PFObject(className:"Transactions")
 
@@ -109,6 +110,7 @@ class ConfirmationViewController: UIViewController {
         }
     }
     
+    //Move to Account Dao
     private func updateAccount() {
         userAccount["balance"] = newAccountBalance
 
@@ -155,19 +157,5 @@ class ConfirmationViewController: UIViewController {
     @IBAction func quickAdd2(_ sender: Any) {
         descriptionField.text = "Good Behavior"
     }
-    
-    @IBAction func quickAdd3(_ sender: Any) {
-        descriptionField.text = "3D Print"
-    }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

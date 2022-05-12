@@ -144,13 +144,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="firstField" destination="vOc-ff-d2T" id="Ylo-zp-xkx"/>
+                        <outlet property="firstLabel" destination="cpm-rD-e23" id="ZDG-kc-d3j"/>
                         <outlet property="logoDarkView" destination="CoZ-N3-Eul" id="QUo-Db-fux"/>
                         <outlet property="logoLightView" destination="Qri-Ko-DXR" id="7Mh-bS-od5"/>
-                        <outlet property="passwordField" destination="QeP-Xq-vWD" id="YlL-zx-A4K"/>
-                        <outlet property="passwordLabel" destination="wIV-Yl-mY1" id="SiU-OK-1Uv"/>
                         <outlet property="roleSegment" destination="jBS-zM-C4N" id="chE-by-m9G"/>
-                        <outlet property="usernameField" destination="vOc-ff-d2T" id="Ylo-zp-xkx"/>
-                        <outlet property="usernameLabel" destination="cpm-rD-e23" id="ZDG-kc-d3j"/>
+                        <outlet property="secondField" destination="QeP-Xq-vWD" id="YlL-zx-A4K"/>
+                        <outlet property="secondLabel" destination="wIV-Yl-mY1" id="SiU-OK-1Uv"/>
                         <segue destination="mSp-Zq-0B2" kind="presentation" identifier="loginSegue" modalPresentationStyle="fullScreen" id="Qbr-Ot-saM"/>
                     </connections>
                 </viewController>

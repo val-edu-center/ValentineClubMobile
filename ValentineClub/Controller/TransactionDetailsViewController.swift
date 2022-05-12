@@ -27,7 +27,7 @@ class TransactionDetailsViewController: UIViewController {
         let description = transaction["description"] as? String
         let currentUsername = PFUser.current()!.username!
         
-        if (description == nil) {
+        if (description == nil || description?.trimmingCharacters(in: .whitespaces) == "") {
             descriptionLabel.text = "No description provided"
         } else {
             descriptionLabel.text = "Description: \(description!)"
@@ -56,19 +56,6 @@ class TransactionDetailsViewController: UIViewController {
                 amountLabel.text = amount.description
                 otherAccountLabel.text = "Unsure how to describe"
         }
-        
-        // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
