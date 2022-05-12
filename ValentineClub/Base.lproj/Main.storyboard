@@ -272,8 +272,7 @@
                                                     <color key="baseBackgroundColor" name="AccentColor"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="payNow:" destination="1oI-X9-lsN" eventType="touchUpInside" id="D6R-G0-yJA"/>
-                                                    <action selector="payNow:" destination="Yv4-BN-x3V" eventType="touchUpInside" id="KMe-or-gto"/>
+                                                    <action selector="send:" destination="1oI-X9-lsN" eventType="touchUpInside" id="zri-UV-eTj"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uaf-12-sF1">
@@ -328,7 +327,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LUa-3k-ISV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="Yv4-BN-x3V" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2250.7246376811595" y="760.71428571428567"/>
         </scene>
