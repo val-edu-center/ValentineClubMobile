@@ -39,6 +39,8 @@ struct RoleMapper {
             groupRole = Role.Prep
         } else if (roles.contains(Role.Cadet.rawValue)) {
             groupRole = Role.Cadet
+        } else if (roles.contains(Role.Club.rawValue)) {
+            groupRole = Role.Club
         }
                     
         return groupRole
