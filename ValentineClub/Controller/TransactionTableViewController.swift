@@ -67,19 +67,19 @@ extension  TransactionTableViewController {
                 if (username.elementsEqual(currentUsername)) {
                     cell.amountLabel.textColor = UIColor.systemRed
                     cell.amountLabel.text = "- $" + amount.description
-                    cell.descriptionLabel.text = description ?? "Sent to " + targetUsername!
+                    cell.descriptionLabel.text = description == nil || description == "" ? "Sent to " + targetUsername! : description
                 } else {
                     cell.amountLabel.textColor = UIColor.systemGreen
                     cell.amountLabel.text = "+ $" + amount.description
-                    cell.descriptionLabel.text = description ?? "Sent from " + username
+                    cell.descriptionLabel.text = description == nil || description == "" ? "Sent from " + username : description
                 }
             case .Withdraw:
                 cell.amountLabel.textColor = UIColor.systemRed
                 cell.amountLabel.text = "- $" + amount.description
                 if (username.elementsEqual(currentUsername)) {
-                    cell.descriptionLabel.text = description ?? "Withdrawal"
+                    cell.descriptionLabel.text = description == nil || description == "" ? "Withdrawal" : description
                 } else {
-                    cell.descriptionLabel.text = description ?? "Withdrawal by " + username
+                    cell.descriptionLabel.text = description == nil || description == "" ? "Withdrawal by " + username : description
                 }
             default:
                 cell.amountLabel.text = amount.description
