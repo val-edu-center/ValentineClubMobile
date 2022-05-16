@@ -18,7 +18,6 @@ class UserSelectViewController: UIViewController, UIPickerViewDelegate, UIPicker
     var userAccount: PFObject!
     
     var selectedUserAccount: PFUser!
-    var selectedUser: String?
     var selectedRole: Role!
     
     var bankController: BankViewController!
@@ -56,12 +55,11 @@ class UserSelectViewController: UIViewController, UIPickerViewDelegate, UIPicker
     } // Number of columns of data
     
     @IBAction func submit(_ sender: Any) {
-        let selectedUserBankAccount = AccountDao.getAccount(username: self.selectedUser!)
+        let selectedUserBankAccount = AccountDao.getAccount(username: self.selectedUserAccount.username ?? "")
         let vc = storyboard?.instantiateViewController(withIdentifier: "confirmationView") as! ConfirmationViewController
         vc.transactionType = self.transactionType
         vc.newAccountBalance = self.newAccountBalance
         vc.amount = self.amount
-        vc.selectedUser = self.selectedUser
         vc.selectedUserAccount = self.selectedUserAccount
         vc.selectedUserBankAccount = selectedUserBankAccount
         vc.userAccount = self.userAccount     
@@ -121,7 +119,6 @@ class UserSelectViewController: UIViewController, UIPickerViewDelegate, UIPicker
         if (!pickerData.isEmpty) {
             let users = pickerData[selectedRole] ?? []
             if (!users.isEmpty) {
-                selectedUser = users[userIndex].username
                 selectedUserAccount = users[userIndex]
             }
         }
