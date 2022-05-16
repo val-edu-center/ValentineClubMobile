@@ -19,8 +19,7 @@ class ConfirmationViewController: UIViewController {
     var userAccount: PFObject!
     var bankController: BankViewController!
     var amount: Int!
-    var newAccountBalance: Int!
-    var selectedUser: String?
+    var newAccountBalance: Int = 0
     var selectedUserAccount: PFUser!
     var selectedUserBankAccount: PFObject!
     
