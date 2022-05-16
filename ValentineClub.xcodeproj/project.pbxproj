@@ -12,6 +12,7 @@
 		A06B2572B96D62AEFD2BE17D /* Pods_ValentineClub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73864D3A7700A20465512D8C /* Pods_ValentineClub.framework */; };
 		A32195E1278B9B1F0037AC3C /* AccountDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32195E0278B9B1F0037AC3C /* AccountDao.swift */; };
 		A32BEE3D278688E8002C4589 /* ConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32BEE3C278688E8002C4589 /* ConfirmationViewController.swift */; };
+		A34FD033282D917000C939D9 /* CredentialService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34FD032282D917000C939D9 /* CredentialService.swift */; };
 		A35BBF4927991DDF00613A73 /* TransactionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35BBF4827991DDF00613A73 /* TransactionType.swift */; };
 		A35C87C6277E3230009B5788 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35C87C5277E3230009B5788 /* AppDelegate.swift */; };
 		A35C87C8277E3230009B5788 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35C87C7277E3230009B5788 /* SceneDelegate.swift */; };
@@ -22,6 +23,7 @@
 		A35C87E7277E3233009B5788 /* ValentineClubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35C87E6277E3233009B5788 /* ValentineClubUITests.swift */; };
 		A35C87E9277E3233009B5788 /* ValentineClubUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35C87E8277E3233009B5788 /* ValentineClubUITestsLaunchTests.swift */; };
 		A38DF07E27C04CAD006D830A /* GameNightVoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38DF07D27C04CAD006D830A /* GameNightVoteViewController.swift */; };
+		A39364E02806801D00498087 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39364DF2806801D00498087 /* UserService.swift */; };
 		A3BA776227D8309F00450D3F /* ErrorMessenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BA776127D8309F00450D3F /* ErrorMessenger.swift */; };
 		A3D08784278158DD00E178E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D08779278158DD00E178E6 /* AppDelegate.swift */; };
 		A3D08785278158DE00E178E6 /* TransactionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D0877A278158DD00E178E6 /* TransactionTableViewController.swift */; };
@@ -38,6 +40,7 @@
 		A3DB442227BC778D0014979F /* RadioButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DB442027BC778D0014979F /* RadioButtonTableViewCell.swift */; };
 		A3DB442327BC778D0014979F /* RadioButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3DB442127BC778D0014979F /* RadioButtonTableViewCell.xib */; };
 		A3E310182798C2A700D87B73 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E310172798C2A700D87B73 /* HomeViewController.swift */; };
+		A3E553D927E252DA00D92CD9 /* TransactionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E553D827E252DA00D92CD9 /* TransactionDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +69,7 @@
 		9BB8E4EEE9219277FC560DAF /* Pods-ValentineClubTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ValentineClubTests.release.xcconfig"; path = "Target Support Files/Pods-ValentineClubTests/Pods-ValentineClubTests.release.xcconfig"; sourceTree = "<group>"; };
 		A32195E0278B9B1F0037AC3C /* AccountDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDao.swift; sourceTree = "<group>"; };
 		A32BEE3C278688E8002C4589 /* ConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationViewController.swift; sourceTree = "<group>"; };
+		A34FD032282D917000C939D9 /* CredentialService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialService.swift; sourceTree = "<group>"; };
 		A35BBF4827991DDF00613A73 /* TransactionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionType.swift; sourceTree = "<group>"; };
 		A35C87C2277E3230009B5788 /* ValentineClub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ValentineClub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A35C87C5277E3230009B5788 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +84,7 @@
 		A35C87E6277E3233009B5788 /* ValentineClubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValentineClubUITests.swift; sourceTree = "<group>"; };
 		A35C87E8277E3233009B5788 /* ValentineClubUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValentineClubUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A38DF07D27C04CAD006D830A /* GameNightVoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameNightVoteViewController.swift; sourceTree = "<group>"; };
+		A39364DF2806801D00498087 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		A3BA776127D8309F00450D3F /* ErrorMessenger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessenger.swift; sourceTree = "<group>"; };
 		A3D08779278158DD00E178E6 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3D0877A278158DD00E178E6 /* TransactionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionTableViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +101,7 @@
 		A3DB442027BC778D0014979F /* RadioButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonTableViewCell.swift; sourceTree = "<group>"; };
 		A3DB442127BC778D0014979F /* RadioButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RadioButtonTableViewCell.xib; sourceTree = "<group>"; };
 		A3E310172798C2A700D87B73 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		A3E553D827E252DA00D92CD9 /* TransactionDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsViewController.swift; sourceTree = "<group>"; };
 		A80B3F8B76E9EF5A6E6AB8EF /* Pods-ValentineClub-ValentineClubUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ValentineClub-ValentineClubUITests.debug.xcconfig"; path = "Target Support Files/Pods-ValentineClub-ValentineClubUITests/Pods-ValentineClub-ValentineClubUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B61C710A91BB8BA6B013A729 /* Pods_ValentineClub_ValentineClubUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ValentineClub_ValentineClubUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8614A5A67206408B62E3DCF /* Pods_ValentineClubTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ValentineClubTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,6 +158,62 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		A34FD02C282D87D000C939D9 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A3D0877D278158DD00E178E6 /* TransactionCell.swift */,
+				A3DB442027BC778D0014979F /* RadioButtonTableViewCell.swift */,
+				A3DB442127BC778D0014979F /* RadioButtonTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		A34FD02D282D87F600C939D9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A35BBF4827991DDF00613A73 /* TransactionType.swift */,
+				A3D9FB8D279E688500DE4688 /* Role.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A34FD02E282D880E00C939D9 /* Dao */ = {
+			isa = PBXGroup;
+			children = (
+				A32195E0278B9B1F0037AC3C /* AccountDao.swift */,
+			);
+			path = Dao;
+			sourceTree = "<group>";
+		};
+		A34FD02F282D882C00C939D9 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				A3BA776127D8309F00450D3F /* ErrorMessenger.swift */,
+				A3D9FB8B279E66E800DE4688 /* RoleMapper.swift */,
+				A39364DF2806801D00498087 /* UserService.swift */,
+				A34FD032282D917000C939D9 /* CredentialService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		A34FD030282D884500C939D9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A3D9FB87279CEA2400DE4688 /* RootViewController.swift */,
+				A3E553D827E252DA00D92CD9 /* TransactionDetailsViewController.swift */,
+				A38DF07D27C04CAD006D830A /* GameNightVoteViewController.swift */,
+				A3D9FB89279E31AB00DE4688 /* GroupRoleViewController.swift */,
+				A3E310172798C2A700D87B73 /* HomeViewController.swift */,
+				A3D08780278158DD00E178E6 /* LoginViewController.swift */,
+				A3D0877A278158DD00E178E6 /* TransactionTableViewController.swift */,
+				A3D0877E278158DD00E178E6 /* TransactionViewController.swift */,
+				A3D0877B278158DD00E178E6 /* UserSelectViewController.swift */,
+				A3D08781278158DD00E178E6 /* BankViewController.swift */,
+				A32BEE3C278688E8002C4589 /* ConfirmationViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		A35C87B9277E3230009B5788 = {
 			isa = PBXGroup;
 			children = (
@@ -177,32 +239,19 @@
 		A35C87C4277E3230009B5788 /* ValentineClub */ = {
 			isa = PBXGroup;
 			children = (
+				A34FD030282D884500C939D9 /* Controller */,
+				A34FD02F282D882C00C939D9 /* Service */,
+				A34FD02E282D880E00C939D9 /* Dao */,
+				A34FD02D282D87F600C939D9 /* Model */,
+				A34FD02C282D87D000C939D9 /* Cells */,
 				A35C87C5277E3230009B5788 /* AppDelegate.swift */,
 				A35C87C7277E3230009B5788 /* SceneDelegate.swift */,
 				A35C87CB277E3230009B5788 /* Main.storyboard */,
-				A38DF07D27C04CAD006D830A /* GameNightVoteViewController.swift */,
-				A3DB442027BC778D0014979F /* RadioButtonTableViewCell.swift */,
-				A3DB442127BC778D0014979F /* RadioButtonTableViewCell.xib */,
-				A3D9FB89279E31AB00DE4688 /* GroupRoleViewController.swift */,
-				A3E310172798C2A700D87B73 /* HomeViewController.swift */,
 				A35C87CE277E3232009B5788 /* Assets.xcassets */,
 				A35C87D0277E3232009B5788 /* LaunchScreen.storyboard */,
 				A3D08779278158DD00E178E6 /* AppDelegate.swift */,
-				A3D08781278158DD00E178E6 /* BankViewController.swift */,
-				A3D08780278158DD00E178E6 /* LoginViewController.swift */,
-				A32BEE3C278688E8002C4589 /* ConfirmationViewController.swift */,
 				A3D08782278158DD00E178E6 /* SceneDelegate.swift */,
-				A3D0877D278158DD00E178E6 /* TransactionCell.swift */,
-				A3D0877A278158DD00E178E6 /* TransactionTableViewController.swift */,
-				A3D0877E278158DD00E178E6 /* TransactionViewController.swift */,
-				A35BBF4827991DDF00613A73 /* TransactionType.swift */,
-				A3D9FB8D279E688500DE4688 /* Role.swift */,
-				A3D0877B278158DD00E178E6 /* UserSelectViewController.swift */,
 				A35C87D3277E3232009B5788 /* Info.plist */,
-				A32195E0278B9B1F0037AC3C /* AccountDao.swift */,
-				A3BA776127D8309F00450D3F /* ErrorMessenger.swift */,
-				A3D9FB8B279E66E800DE4688 /* RoleMapper.swift */,
-				A3D9FB87279CEA2400DE4688 /* RootViewController.swift */,
 			);
 			path = ValentineClub;
 			sourceTree = "<group>";
@@ -471,11 +520,14 @@
 				A3D0878C278158DE00E178E6 /* BankViewController.swift in Sources */,
 				A35C87C6277E3230009B5788 /* AppDelegate.swift in Sources */,
 				A3D9FB8A279E31AC00DE4688 /* GroupRoleViewController.swift in Sources */,
+				A39364E02806801D00498087 /* UserService.swift in Sources */,
 				A3BA776227D8309F00450D3F /* ErrorMessenger.swift in Sources */,
+				A3E553D927E252DA00D92CD9 /* TransactionDetailsViewController.swift in Sources */,
 				A3D08786278158DE00E178E6 /* UserSelectViewController.swift in Sources */,
 				A32195E1278B9B1F0037AC3C /* AccountDao.swift in Sources */,
 				A38DF07E27C04CAD006D830A /* GameNightVoteViewController.swift in Sources */,
 				A3D9FB88279CEA2400DE4688 /* RootViewController.swift in Sources */,
+				A34FD033282D917000C939D9 /* CredentialService.swift in Sources */,
 				A3E310182798C2A700D87B73 /* HomeViewController.swift in Sources */,
 				A3D08789278158DE00E178E6 /* TransactionViewController.swift in Sources */,
 				A32BEE3D278688E8002C4589 /* ConfirmationViewController.swift in Sources */,
@@ -672,7 +724,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -683,7 +735,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TVOS_DEPLOYMENT_TARGET = 14.7;
+				TVOS_DEPLOYMENT_TARGET = 15.2;
 			};
 			name = Debug;
 		};
@@ -703,7 +755,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -714,7 +766,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TVOS_DEPLOYMENT_TARGET = 14.7;
+				TVOS_DEPLOYMENT_TARGET = 15.2;
 			};
 			name = Release;
 		};

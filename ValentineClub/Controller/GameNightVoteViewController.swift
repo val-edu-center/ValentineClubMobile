@@ -15,6 +15,7 @@ class GameNightVoteViewController: UIViewController, UITableViewDataSource, UITa
     private var oldUserVoteMap: [String:String] = [:]
     private var userVoteMap: [String:String] = [:]
     private var oldUserVotes: [PFObject] = []
+    //TODO standardize cell names
     let radioButton = "RadioButtonTableViewCell"
     let dateFormatter = DateFormatter()
     
@@ -26,9 +27,9 @@ class GameNightVoteViewController: UIViewController, UITableViewDataSource, UITa
         dateFormatter.dateFormat = "MM/dd/YY"
         tableView.delegate = self
         tableView.dataSource = self
-        
         tableView.register(UINib(nibName: radioButton, bundle: nil), forCellReuseIdentifier: radioButton)
         
+        //Extract this into Dao
         let gameNightQuery = PFQuery(className:"GameNight")
         do {
             try gameNights = gameNightQuery.findObjects()

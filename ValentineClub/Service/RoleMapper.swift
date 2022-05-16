@@ -18,6 +18,7 @@ struct RoleMapper {
         return user?["roles"] as? [String]
     }
     //TODO make this similar to front end logic
+    //Make this return non null when adding guest role
     static func getGroupRole(user: PFUser?) -> Role? {
         let roles = getRoles(user: user) ?? []
         var groupRole: Role? = nil
@@ -38,6 +39,8 @@ struct RoleMapper {
             groupRole = Role.Prep
         } else if (roles.contains(Role.Cadet.rawValue)) {
             groupRole = Role.Cadet
+        } else if (roles.contains(Role.Club.rawValue)) {
+            groupRole = Role.Club
         }
                     
         return groupRole

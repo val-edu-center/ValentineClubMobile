@@ -8,13 +8,16 @@
 import UIKit
 import Parse
 
-var transactions: [PFObject] = [PFObject]()
-var currentUsername = ""
 
 class TransactionTableViewController: UITableViewController {
     
+    var transactions: [PFObject] = [PFObject]()
+    var currentUsername = ""
+    
     override func viewDidLoad() {
         currentUsername = PFUser.current()!.username!
+        
+        //TODO Move to Dao
         let usernameQuery = PFQuery(className:"Transactions")
         usernameQuery.whereKey("username", equalTo: currentUsername)
 
@@ -22,6 +25,7 @@ class TransactionTableViewController: UITableViewController {
         targetUsernameQuery.whereKey("targetUsername", equalTo: currentUsername)
 
         let query = PFQuery.orQuery(withSubqueries: [usernameQuery, targetUsernameQuery])
+        query.order(byDescending: "createdAt")
         
         do {
             try transactions = query.findObjects().filter({ transaction in
@@ -57,32 +61,43 @@ extension  TransactionTableViewController {
         let targetUsername = transaction["targetUsername"] as? String
         let transactionType = transaction["transactionType"] as! String
         let username = transaction["username"] as! String
-        
+        let description = transaction["description"] as? String
         switch TransactionType(rawValue: transactionType) {
             case .Send:
                 if (username.elementsEqual(currentUsername)) {
                     cell.amountLabel.textColor = UIColor.systemRed
                     cell.amountLabel.text = "- $" + amount.description
-                    cell.descriptionLabel.text = "Sent to " + targetUsername!
+                    cell.descriptionLabel.text = description == nil || description == "" ? "Sent to " + targetUsername! : description
                 } else {
                     cell.amountLabel.textColor = UIColor.systemGreen
                     cell.amountLabel.text = "+ $" + amount.description
-                    cell.descriptionLabel.text = "Sent from " + username
+                    cell.descriptionLabel.text = description == nil || description == "" ? "Sent from " + username : description
                 }
             case .Withdraw:
                 cell.amountLabel.textColor = UIColor.systemRed
                 cell.amountLabel.text = "- $" + amount.description
                 if (username.elementsEqual(currentUsername)) {
-                    cell.descriptionLabel.text = "Withdrawal"
+                    cell.descriptionLabel.text = description == nil || description == "" ? "Withdrawal" : description
                 } else {
-                    cell.descriptionLabel.text = "Withdrawal by " + username
+                    cell.descriptionLabel.text = description == nil || description == "" ? "Withdrawal by " + username : description
                 }
             default:
                 cell.amountLabel.text = amount.description
-                cell.descriptionLabel.text = "Unsure how to describe"
+                cell.descriptionLabel.text = description ?? "Unsure how to describe"
         }
         
         return cell
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! UITableViewCell
+        let indexPath = tableView.indexPath(for: cell)!
+        let transaction = transactions[indexPath.row]
+        let transactionType = transaction["transactionType"] as! String
+        let transactionDetailsViewController = segue.destination as! TransactionDetailsViewController
+        transactionDetailsViewController.transaction = transaction
+        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

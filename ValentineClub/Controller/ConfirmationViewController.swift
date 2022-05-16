@@ -10,8 +10,8 @@ import Parse
 
 class ConfirmationViewController: UIViewController {
     
+    @IBOutlet weak var descriptionField: UITextField!
     @IBOutlet weak var promptLabel: UILabel!
-    
     @IBOutlet weak var amountLabel: UILabel!
     
     var transactionType: TransactionType!
@@ -20,36 +20,44 @@ class ConfirmationViewController: UIViewController {
     var bankController: BankViewController!
     var amount: Int!
     var newAccountBalance: Int!
-    var selectedUser: String?
-    var selectedUserAccount: PFObject?
+    var selectedUserAccount: PFUser!
+    var selectedUserBankAccount: PFObject!
     
     var isCurrentUserTarget = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
         let currentUsername = PFUser.current()!.username!
-        isCurrentUserTarget = selectedUser?.elementsEqual(currentUsername) ?? false
+        //TODO address if object equals would be better here
+        isCurrentUserTarget =  selectedUserAccount.username?.elementsEqual(currentUsername) ?? false
         
         switch transactionType {
             case .Send:
-                promptLabel.text = "Confirm Amount to Send to " + selectedUser!
+            promptLabel.text = "Confirm Amount to Send to " + UserService.getName(user: selectedUserAccount)
             case .Withdraw:
                 if (isCurrentUserTarget) {
                     promptLabel.text = "Confirm Amount to Withdraw"
                 } else {
-                    promptLabel.text = "Confirm Amount to Withdraw from " + selectedUser!
+                    promptLabel.text = "Confirm Amount to Withdraw from " + UserService.getName(user: selectedUserAccount)
                 }
             default:
                 print("Error: Not a valid transaction type")
         }
         if (isCurrentUserTarget || transactionType == TransactionType.Send) {
-            amountLabel.text = "- $" + amount.description + "\nNew Account Balance: $" + newAccountBalance.description
+            amountLabel.text = "New Account Balance: $" + newAccountBalance.description
         } else {
-            let oldTargetAccountBalance = selectedUserAccount!["balance"] as! Int
+            let oldTargetAccountBalance = selectedUserBankAccount!["balance"] as! Int
             let newTargetAccountBalance = oldTargetAccountBalance - amount
-            amountLabel.text = "- $" + amount.description + "\nNew Account Balance for "
-            + selectedUser! + ": $" + newTargetAccountBalance.description
+            amountLabel.text = "New Account Balance for " + UserService.getName(user: selectedUserAccount) + ": $" + newTargetAccountBalance.description
         }
+        
+        //Looks for single or multiple taps.
+         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+
+        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+        //tap.cancelsTouchesInView = false
+
+        view.addGestureRecognizer(tap)
     }
     
     @IBAction func submit(_ sender: Any) {
@@ -59,7 +67,7 @@ class ConfirmationViewController: UIViewController {
             bankController.balanceLabel.text = "$ " + newAccountBalance.description
             bankController.setAccountBalance(balance: newAccountBalance)
         }
-        if (selectedUserAccount != nil) {
+        if (selectedUserBankAccount != nil) {
             updateTargetAccount()
         }
         bankController.dismiss(animated: true, completion: nil)
@@ -69,15 +77,26 @@ class ConfirmationViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    //Calls this function when the tap is recognized.
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+
+        return true
+    }
+    
+    //Move to Dao
     private func createTransaction() {
         var parseObject = PFObject(className:"Transactions")
 
         parseObject["username"] = PFUser.current()!.username!
         parseObject["transactionType"] = transactionType.rawValue
         parseObject["amount"] = amount
-        if (selectedUser != nil) {
-            parseObject["targetUsername"] = selectedUser
-        }
+        parseObject["description"] = descriptionField.text
+        parseObject["targetUsername"] = selectedUserAccount.username
 
         // Saves the new object.
         parseObject.saveInBackground {
@@ -90,6 +109,7 @@ class ConfirmationViewController: UIViewController {
         }
     }
     
+    //Move to Account Dao
     private func updateAccount() {
         userAccount["balance"] = newAccountBalance
 
@@ -107,19 +127,19 @@ class ConfirmationViewController: UIViewController {
     private func updateTargetAccount() {
         switch transactionType {
             case .Send:
-                let oldTargetAccountBalance = selectedUserAccount!["balance"] as! Int
+                let oldTargetAccountBalance = selectedUserBankAccount["balance"] as! Int
                 let newTargetAccountBalance = oldTargetAccountBalance + amount
-                selectedUserAccount!["balance"] = newTargetAccountBalance
+                selectedUserBankAccount!["balance"] = newTargetAccountBalance
             case .Withdraw:
-                let oldTargetAccountBalance = selectedUserAccount!["balance"] as! Int
+                let oldTargetAccountBalance = selectedUserBankAccount!["balance"] as! Int
                 let newTargetAccountBalance = oldTargetAccountBalance - amount
-                selectedUserAccount!["balance"] = newTargetAccountBalance
+                selectedUserBankAccount!["balance"] = newTargetAccountBalance
             default:
                return
         }
 
         // Saves the new object.
-        selectedUserAccount!.saveInBackground {
+        selectedUserBankAccount!.saveInBackground {
           (success: Bool, error: Error?) in
           if (success) {
             // The object has been saved.
@@ -129,15 +149,12 @@ class ConfirmationViewController: UIViewController {
         }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func quickAdd1(_ sender: Any) {
+        descriptionField.text = "Attendance"
     }
-    */
+    
+    @IBAction func quickAdd2(_ sender: Any) {
+        descriptionField.text = "Good Behavior"
+    }
 
 }

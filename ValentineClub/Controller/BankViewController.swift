@@ -24,9 +24,6 @@ class BankViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if (role != Role.Director && role != Role.Staff) {
-            if (role == Role.Cadet) {
-                sendMoneyButton.isHidden = true
-            }
             withdrawButton.isHidden = true
         }
         scrollView.refreshControl = UIRefreshControl()
@@ -37,7 +34,7 @@ class BankViewController: UIViewController {
         loadAccountBalance()
     }
     
-    @IBAction func payNow(_ sender: Any) {
+    @IBAction func send(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "transactionView") as! TransactionViewController
         vc.transactionType = TransactionType.Send
         vc.previousAccountBalance = accountBalance
