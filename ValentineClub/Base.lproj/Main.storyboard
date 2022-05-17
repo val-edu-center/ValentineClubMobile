@@ -339,7 +339,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SAp-nV-2Do">
-                                <rect key="frame" x="87.5" y="425.5" width="55" height="55"/>
+                                <rect key="frame" x="71.5" y="425.5" width="55" height="55"/>
                                 <color key="backgroundColor" systemColor="systemRedColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="55" id="Eko-G9-Wfv"/>
@@ -363,7 +363,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRe-pR-ltS">
-                                <rect key="frame" x="271.5" y="425.5" width="55" height="55"/>
+                                <rect key="frame" x="287.5" y="425.5" width="55" height="55"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="jqy-5X-yc1"/>
@@ -424,8 +424,8 @@
                                     <action selector="submitTransaction:" destination="5F5-dF-1li" eventType="touchUpInside" id="tFB-nM-QyF"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tdj-Cy-49u">
-                                <rect key="frame" x="184.5" y="400.5" width="45" height="105"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tdj-Cy-49u">
+                                <rect key="frame" x="168.5" y="400.5" width="77" height="105"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="80"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
