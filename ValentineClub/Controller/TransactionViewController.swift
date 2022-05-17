@@ -52,6 +52,8 @@ class TransactionViewController: UIViewController {
                 default:
                     print("Error: Not a valid transaction type")
             }
+        } else {
+            ErrorMessenger.showErrorMessageString(action: "Submit transaction", error: "Insufficient Funds", view: self.view)
         }
     }
     
