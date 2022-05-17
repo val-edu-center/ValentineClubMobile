@@ -12,6 +12,7 @@
 		A06B2572B96D62AEFD2BE17D /* Pods_ValentineClub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73864D3A7700A20465512D8C /* Pods_ValentineClub.framework */; };
 		A32195E1278B9B1F0037AC3C /* AccountDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32195E0278B9B1F0037AC3C /* AccountDao.swift */; };
 		A32BEE3D278688E8002C4589 /* ConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32BEE3C278688E8002C4589 /* ConfirmationViewController.swift */; };
+		A33EA2FB28337A210085BA81 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33EA2FA28337A210085BA81 /* BaseViewController.swift */; };
 		A34FD033282D917000C939D9 /* CredentialService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34FD032282D917000C939D9 /* CredentialService.swift */; };
 		A35BBF4927991DDF00613A73 /* TransactionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35BBF4827991DDF00613A73 /* TransactionType.swift */; };
 		A35C87C6277E3230009B5788 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35C87C5277E3230009B5788 /* AppDelegate.swift */; };
@@ -69,6 +70,7 @@
 		9BB8E4EEE9219277FC560DAF /* Pods-ValentineClubTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ValentineClubTests.release.xcconfig"; path = "Target Support Files/Pods-ValentineClubTests/Pods-ValentineClubTests.release.xcconfig"; sourceTree = "<group>"; };
 		A32195E0278B9B1F0037AC3C /* AccountDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDao.swift; sourceTree = "<group>"; };
 		A32BEE3C278688E8002C4589 /* ConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationViewController.swift; sourceTree = "<group>"; };
+		A33EA2FA28337A210085BA81 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		A34FD032282D917000C939D9 /* CredentialService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialService.swift; sourceTree = "<group>"; };
 		A35BBF4827991DDF00613A73 /* TransactionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionType.swift; sourceTree = "<group>"; };
 		A35C87C2277E3230009B5788 /* ValentineClub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ValentineClub.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -210,6 +212,7 @@
 				A3D0877B278158DD00E178E6 /* UserSelectViewController.swift */,
 				A3D08781278158DD00E178E6 /* BankViewController.swift */,
 				A32BEE3C278688E8002C4589 /* ConfirmationViewController.swift */,
+				A33EA2FA28337A210085BA81 /* BaseViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -533,6 +536,7 @@
 				A32BEE3D278688E8002C4589 /* ConfirmationViewController.swift in Sources */,
 				A3D9FB8C279E66E800DE4688 /* RoleMapper.swift in Sources */,
 				A3D0878D278158DE00E178E6 /* SceneDelegate.swift in Sources */,
+				A33EA2FB28337A210085BA81 /* BaseViewController.swift in Sources */,
 				A35C87C8277E3230009B5788 /* SceneDelegate.swift in Sources */,
 				A3D08788278158DE00E178E6 /* TransactionCell.swift in Sources */,
 				A3D08785278158DE00E178E6 /* TransactionTableViewController.swift in Sources */,

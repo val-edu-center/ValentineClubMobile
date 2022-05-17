@@ -386,12 +386,6 @@
                                     <action selector="addOne:" destination="5F5-dF-1li" eventType="touchUpInside" id="GIY-mj-gkd"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pv4-el-LPE">
-                                <rect key="frame" x="182.5" y="405.5" width="49" height="95.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prompt" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RYm-Sh-ULs">
                                 <rect key="frame" x="20" y="64" width="374" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
@@ -430,38 +424,44 @@
                                     <action selector="submitTransaction:" destination="5F5-dF-1li" eventType="touchUpInside" id="tFB-nM-QyF"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tdj-Cy-49u">
+                                <rect key="frame" x="184.5" y="400.5" width="45" height="105"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bH4-GE-WvG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="uqb-fM-UVs" firstAttribute="centerX" secondItem="bH4-GE-WvG" secondAttribute="centerX" id="0JW-Zq-5Iz"/>
                             <constraint firstItem="RYm-Sh-ULs" firstAttribute="top" secondItem="bH4-GE-WvG" secondAttribute="top" constant="20" id="13p-Cz-cZZ"/>
-                            <constraint firstItem="pv4-el-LPE" firstAttribute="leading" secondItem="SAp-nV-2Do" secondAttribute="trailing" constant="40" id="1O6-7S-Wem"/>
+                            <constraint firstItem="SAp-nV-2Do" firstAttribute="centerY" secondItem="tdj-Cy-49u" secondAttribute="centerY" id="231-p4-uPM"/>
                             <constraint firstItem="VI5-oH-CVy" firstAttribute="centerX" secondItem="bH4-GE-WvG" secondAttribute="centerX" id="3Tj-P6-XX4"/>
-                            <constraint firstItem="pv4-el-LPE" firstAttribute="centerY" secondItem="bH4-GE-WvG" secondAttribute="centerY" id="80Q-g8-yBa"/>
+                            <constraint firstItem="HRe-pR-ltS" firstAttribute="leading" secondItem="tdj-Cy-49u" secondAttribute="trailing" constant="42" id="FGj-Fq-ay0"/>
                             <constraint firstItem="bH4-GE-WvG" firstAttribute="trailing" secondItem="VI5-oH-CVy" secondAttribute="trailing" constant="20" id="Iv4-5u-CCB"/>
                             <constraint firstItem="bH4-GE-WvG" firstAttribute="bottom" secondItem="VI5-oH-CVy" secondAttribute="bottom" constant="20" id="NXM-od-gXz"/>
-                            <constraint firstItem="pv4-el-LPE" firstAttribute="centerX" secondItem="bH4-GE-WvG" secondAttribute="centerX" id="OxM-lJ-Uh6"/>
+                            <constraint firstItem="HRe-pR-ltS" firstAttribute="centerY" secondItem="tdj-Cy-49u" secondAttribute="centerY" id="Tfn-Mb-48D"/>
                             <constraint firstItem="uqb-fM-UVs" firstAttribute="leading" secondItem="bH4-GE-WvG" secondAttribute="leading" constant="20" id="Usn-Vn-9JN"/>
-                            <constraint firstItem="pv4-el-LPE" firstAttribute="centerY" secondItem="SAp-nV-2Do" secondAttribute="centerY" id="gd2-ZG-KKh"/>
+                            <constraint firstItem="tdj-Cy-49u" firstAttribute="centerX" secondItem="bH4-GE-WvG" secondAttribute="centerX" id="f1F-WB-Ipc"/>
                             <constraint firstItem="RYm-Sh-ULs" firstAttribute="leading" secondItem="bH4-GE-WvG" secondAttribute="leading" constant="20" id="hIP-Me-jDZ"/>
                             <constraint firstItem="bH4-GE-WvG" firstAttribute="trailing" secondItem="RYm-Sh-ULs" secondAttribute="trailing" constant="20" id="n2n-Bn-kx6"/>
+                            <constraint firstItem="tdj-Cy-49u" firstAttribute="leading" secondItem="SAp-nV-2Do" secondAttribute="trailing" constant="42" id="nbW-Ek-qEQ"/>
                             <constraint firstItem="bH4-GE-WvG" firstAttribute="trailing" secondItem="uqb-fM-UVs" secondAttribute="trailing" constant="20" id="oCQ-l8-P7A"/>
                             <constraint firstItem="VI5-oH-CVy" firstAttribute="leading" secondItem="bH4-GE-WvG" secondAttribute="leading" constant="20" id="pSr-vr-wX0"/>
-                            <constraint firstItem="HRe-pR-ltS" firstAttribute="leading" secondItem="pv4-el-LPE" secondAttribute="trailing" constant="40" id="srH-FX-2Ns"/>
                             <constraint firstItem="HRe-pR-ltS" firstAttribute="centerY" secondItem="SAp-nV-2Do" secondAttribute="centerY" id="tzg-nL-K6w"/>
                             <constraint firstItem="VI5-oH-CVy" firstAttribute="top" secondItem="uqb-fM-UVs" secondAttribute="bottom" constant="20" id="vH3-rM-Mtw"/>
+                            <constraint firstItem="tdj-Cy-49u" firstAttribute="centerY" secondItem="bH4-GE-WvG" secondAttribute="centerY" id="wAh-Hy-6hZ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lix-5e-ZXv"/>
                     <connections>
-                        <outlet property="amountLabel" destination="pv4-el-LPE" id="rmr-Mc-z7N"/>
+                        <outlet property="amountInput" destination="tdj-Cy-49u" id="kMb-6T-AWW"/>
                         <outlet property="promptLabel" destination="RYm-Sh-ULs" id="444-na-S9P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1xh-iT-WX0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1764" y="1564"/>
+            <point key="canvasLocation" x="1763.7681159420292" y="1563.6160714285713"/>
         </scene>
         <!--Transaction Table View Controller-->
         <scene sceneID="5zd-LE-lqV">

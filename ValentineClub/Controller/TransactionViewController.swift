@@ -11,7 +11,8 @@ import Parse
 class TransactionViewController: UIViewController {
     
     @IBOutlet weak var promptLabel: UILabel!
-    @IBOutlet weak var amountLabel: UILabel!
+    
+    @IBOutlet weak var amountInput: UITextField!
     var transactionType: TransactionType!
     var previousAccountBalance: Int!
     var userAccount: PFObject!
@@ -19,7 +20,9 @@ class TransactionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        amountInput.keyboardType = UIKeyboardType.numberPad
         
+        self.hideKeyboardWhenTappedAround()
         self.promptLabel.text = "Select Amount to " + transactionType.rawValue
 
         // Do any additional setup after loading the view.
@@ -29,12 +32,12 @@ class TransactionViewController: UIViewController {
     
     @IBAction func subtractOne(_ sender: Any) {
         let newAmount = getAmountDifference( difference: -1)
-        amountLabel.text = newAmount.description
+        amountInput.text = newAmount.description
     }
 
     @IBAction func addOne(_ sender: Any) {
         let newAmount = getAmountDifference( difference: 1)
-        amountLabel.text = newAmount.description
+        amountInput.text = newAmount.description
     }
     
     @IBAction func submitTransaction(_ sender: Any) {
@@ -85,7 +88,7 @@ class TransactionViewController: UIViewController {
     }
     
     private func getAmountDifference(difference: Int) -> Int{
-        let amount = Int(self.amountLabel.text!)! + difference
+        let amount = Int(self.amountInput.text == nil || self.amountInput.text! == "" ? "0" : self.amountInput.text!)! + difference
         if (amount < 0) {
             return 0
         } else {

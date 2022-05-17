@@ -1,3 +1,4 @@
 Podfile.lock
 Pods/
+*.xcuserstate
 .DS_Store

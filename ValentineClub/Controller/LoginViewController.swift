@@ -34,18 +34,20 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         self.firstField.delegate = self
         self.secondField.delegate = self
+        
+        self.hideKeyboardWhenTappedAround()
         //Looks for single or multiple taps.
-         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+//         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
 
         //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
         //tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
+//        view.addGestureRecognizer(tap)
     }
-    //Calls this function when the tap is recognized.
-    @objc func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
-        view.endEditing(true)
-    }
+//    //Calls this function when the tap is recognized.
+//    @objc func dismissKeyboard() {
+//        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+//        view.endEditing(true)
+//    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         //textField code
