@@ -12,6 +12,8 @@
 		A06B2572B96D62AEFD2BE17D /* Pods_ValentineClub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73864D3A7700A20465512D8C /* Pods_ValentineClub.framework */; };
 		A32195E1278B9B1F0037AC3C /* AccountDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32195E0278B9B1F0037AC3C /* AccountDao.swift */; };
 		A32BEE3D278688E8002C4589 /* ConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32BEE3C278688E8002C4589 /* ConfirmationViewController.swift */; };
+		A337BEC72873745E00F6BDBC /* Toaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = A337BEC62873745E00F6BDBC /* Toaster.swift */; };
+		A337BEC928737A5800F6BDBC /* PrintTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A337BEC828737A5800F6BDBC /* PrintTableViewController.swift */; };
 		A33EA2FB28337A210085BA81 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33EA2FA28337A210085BA81 /* BaseViewController.swift */; };
 		A34FD033282D917000C939D9 /* CredentialService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34FD032282D917000C939D9 /* CredentialService.swift */; };
 		A35BBF4927991DDF00613A73 /* TransactionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35BBF4827991DDF00613A73 /* TransactionType.swift */; };
@@ -42,6 +44,7 @@
 		A3DB442327BC778D0014979F /* RadioButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3DB442127BC778D0014979F /* RadioButtonTableViewCell.xib */; };
 		A3E310182798C2A700D87B73 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E310172798C2A700D87B73 /* HomeViewController.swift */; };
 		A3E553D927E252DA00D92CD9 /* TransactionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E553D827E252DA00D92CD9 /* TransactionDetailsViewController.swift */; };
+		A3F6D5D8286BD9C300DAF6FE /* PrintFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F6D5D7286BD92700DAF6FE /* PrintFormViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +73,8 @@
 		9BB8E4EEE9219277FC560DAF /* Pods-ValentineClubTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ValentineClubTests.release.xcconfig"; path = "Target Support Files/Pods-ValentineClubTests/Pods-ValentineClubTests.release.xcconfig"; sourceTree = "<group>"; };
 		A32195E0278B9B1F0037AC3C /* AccountDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDao.swift; sourceTree = "<group>"; };
 		A32BEE3C278688E8002C4589 /* ConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationViewController.swift; sourceTree = "<group>"; };
+		A337BEC62873745E00F6BDBC /* Toaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toaster.swift; sourceTree = "<group>"; };
+		A337BEC828737A5800F6BDBC /* PrintTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintTableViewController.swift; sourceTree = "<group>"; };
 		A33EA2FA28337A210085BA81 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		A34FD032282D917000C939D9 /* CredentialService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialService.swift; sourceTree = "<group>"; };
 		A35BBF4827991DDF00613A73 /* TransactionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionType.swift; sourceTree = "<group>"; };
@@ -104,6 +109,7 @@
 		A3DB442127BC778D0014979F /* RadioButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RadioButtonTableViewCell.xib; sourceTree = "<group>"; };
 		A3E310172798C2A700D87B73 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A3E553D827E252DA00D92CD9 /* TransactionDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsViewController.swift; sourceTree = "<group>"; };
+		A3F6D5D7286BD92700DAF6FE /* PrintFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintFormViewController.swift; sourceTree = "<group>"; };
 		A80B3F8B76E9EF5A6E6AB8EF /* Pods-ValentineClub-ValentineClubUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ValentineClub-ValentineClubUITests.debug.xcconfig"; path = "Target Support Files/Pods-ValentineClub-ValentineClubUITests/Pods-ValentineClub-ValentineClubUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B61C710A91BB8BA6B013A729 /* Pods_ValentineClub_ValentineClubUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ValentineClub_ValentineClubUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8614A5A67206408B62E3DCF /* Pods_ValentineClubTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ValentineClubTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,6 +200,7 @@
 				A3D9FB8B279E66E800DE4688 /* RoleMapper.swift */,
 				A39364DF2806801D00498087 /* UserService.swift */,
 				A34FD032282D917000C939D9 /* CredentialService.swift */,
+				A337BEC62873745E00F6BDBC /* Toaster.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -201,6 +208,8 @@
 		A34FD030282D884500C939D9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A337BEC828737A5800F6BDBC /* PrintTableViewController.swift */,
+				A3F6D5D7286BD92700DAF6FE /* PrintFormViewController.swift */,
 				A3D9FB87279CEA2400DE4688 /* RootViewController.swift */,
 				A3E553D827E252DA00D92CD9 /* TransactionDetailsViewController.swift */,
 				A38DF07D27C04CAD006D830A /* GameNightVoteViewController.swift */,
@@ -521,9 +530,11 @@
 				A3D9FB8E279E688500DE4688 /* Role.swift in Sources */,
 				A3DB442227BC778D0014979F /* RadioButtonTableViewCell.swift in Sources */,
 				A3D0878C278158DE00E178E6 /* BankViewController.swift in Sources */,
+				A337BEC72873745E00F6BDBC /* Toaster.swift in Sources */,
 				A35C87C6277E3230009B5788 /* AppDelegate.swift in Sources */,
 				A3D9FB8A279E31AC00DE4688 /* GroupRoleViewController.swift in Sources */,
 				A39364E02806801D00498087 /* UserService.swift in Sources */,
+				A3F6D5D8286BD9C300DAF6FE /* PrintFormViewController.swift in Sources */,
 				A3BA776227D8309F00450D3F /* ErrorMessenger.swift in Sources */,
 				A3E553D927E252DA00D92CD9 /* TransactionDetailsViewController.swift in Sources */,
 				A3D08786278158DE00E178E6 /* UserSelectViewController.swift in Sources */,
@@ -539,6 +550,7 @@
 				A33EA2FB28337A210085BA81 /* BaseViewController.swift in Sources */,
 				A35C87C8277E3230009B5788 /* SceneDelegate.swift in Sources */,
 				A3D08788278158DE00E178E6 /* TransactionCell.swift in Sources */,
+				A337BEC928737A5800F6BDBC /* PrintTableViewController.swift in Sources */,
 				A3D08785278158DE00E178E6 /* TransactionTableViewController.swift in Sources */,
 				A3D0878B278158DE00E178E6 /* LoginViewController.swift in Sources */,
 			);
