@@ -22,7 +22,7 @@ class UserSelectViewController: UIViewController, UIPickerViewDelegate, UIPicker
     
     var bankController: BankViewController!
     //TODO Make role non optional
-    var pickerData = [Role? : [PFUser]]()
+    var groupsToUsers = [Role? : [PFUser]]()
     var availableRoles = [Role]()
     
     override func viewDidLoad() {
@@ -36,10 +36,10 @@ class UserSelectViewController: UIViewController, UIPickerViewDelegate, UIPicker
             let usersRaw = try PFUser.query()!.findObjects() as! [PFUser]
             let users = usersRaw.filter({ user in
                 !(user.username?.elementsEqual(currentUsername) ?? false) || transactionType == TransactionType.Withdraw
-            })
+            }).sorted( by: { compareUsers(user1: $0, user2: $1) })
             
-            pickerData = Dictionary(grouping: users, by: { RoleMapper.getGroupRole(user: $0) })
-            for key in pickerData.keys {
+            groupsToUsers = Dictionary(grouping: users, by: { RoleMapper.getGroupRole(user: $0) })
+            for key in groupsToUsers.keys {
                 if key != nil {
                     availableRoles.append(key!)
                 }
@@ -81,7 +81,7 @@ class UserSelectViewController: UIViewController, UIPickerViewDelegate, UIPicker
         if component == 0 {
             return availableRoles.count
         } else {
-            return pickerData[selectedRole]?.count ?? 0
+            return groupsToUsers[selectedRole]?.count ?? 0
         }
     }
     
@@ -89,7 +89,7 @@ class UserSelectViewController: UIViewController, UIPickerViewDelegate, UIPicker
         if component == 0 {
             return availableRoles[row].rawValue
         } else {
-            let users = pickerData[selectedRole] ?? []
+            let users = groupsToUsers[selectedRole] ?? []
             if (users.isEmpty) {
                 return nil
             } else {
@@ -116,11 +116,17 @@ class UserSelectViewController: UIViewController, UIPickerViewDelegate, UIPicker
         if (!availableRoles.isEmpty && roleIndex != nil) {
             selectedRole = availableRoles[roleIndex!]
         }
-        if (!pickerData.isEmpty) {
-            let users = pickerData[selectedRole] ?? []
+        if (!groupsToUsers.isEmpty) {
+            let users = groupsToUsers[selectedRole] ?? []
             if (!users.isEmpty) {
                 selectedUserAccount = users[userIndex]
             }
         }
+    }
+    
+    private func compareUsers(user1: PFUser, user2: PFUser) -> Bool{
+        let userFullName1 = UserService.getName(user: user1).lowercased()
+        let userFullName2 = UserService.getName(user: user2).lowercased()
+        return userFullName1 < userFullName2
     }
 }
