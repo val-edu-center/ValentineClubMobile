@@ -36,7 +36,7 @@ class UserSelectViewController: UIViewController, UIPickerViewDelegate, UIPicker
             let usersRaw = try PFUser.query()!.findObjects() as! [PFUser]
             let users = usersRaw.filter({ user in
                 !(user.username?.elementsEqual(currentUsername) ?? false) || transactionType == TransactionType.Withdraw
-            }).sorted( by: { compareUsers(user1: $0, user2: $1) })
+            }).sorted( by: { compareUserNames(user1: $0, user2: $1) })
             
             groupsToUsers = Dictionary(grouping: users, by: { RoleMapper.getGroupRole(user: $0) })
             for key in groupsToUsers.keys {
@@ -124,7 +124,7 @@ class UserSelectViewController: UIViewController, UIPickerViewDelegate, UIPicker
         }
     }
     
-    private func compareUsers(user1: PFUser, user2: PFUser) -> Bool{
+    private func compareUserNames(user1: PFUser, user2: PFUser) -> Bool{
         let userFullName1 = UserService.getName(user: user1).lowercased()
         let userFullName2 = UserService.getName(user: user2).lowercased()
         return userFullName1 < userFullName2
