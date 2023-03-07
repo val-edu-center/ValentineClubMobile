@@ -306,6 +306,7 @@
 				A35C87D4277E3232009B5788 /* Sources */,
 				A35C87D5277E3232009B5788 /* Frameworks */,
 				A35C87D6277E3232009B5788 /* Resources */,
+				0608493EECA47895AEE049DC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -409,6 +410,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0608493EECA47895AEE049DC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ValentineClubTests/Pods-ValentineClubTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ValentineClubTests/Pods-ValentineClubTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ValentineClubTests/Pods-ValentineClubTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		086CFB306B9357F3688F2787 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
