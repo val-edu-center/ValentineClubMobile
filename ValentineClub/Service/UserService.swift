@@ -1,10 +1,10 @@
+
 //
 //  UserService.swift
 //  ValentineClub
 //
 //  Created by Valentine Education Center on 4/12/22.
 //
-
 import Foundation
 import Parse
 
@@ -16,4 +16,3 @@ struct UserService {
         return (firstName == "" && lastName == "") ? username : firstName + " " + lastName
     }
 }
-
