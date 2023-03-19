@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "blueblkwhitetxt.png",
+      "filename" : "blueblkwhitetxt-1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -12,7 +12,7 @@
           "value" : "light"
         }
       ],
-      "filename" : "blueblkwhitetxt-1.png",
+      "filename" : "blueblkwhitetxt.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
