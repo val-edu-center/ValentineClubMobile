@@ -584,6 +584,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="withdraw:" destination="1oI-X9-lsN" eventType="touchUpInside" id="cOU-El-aYr"/>
+                                    <segue destination="yIY-Ic-pmN" kind="show" id="w3m-wN-S82"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -609,7 +610,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="44s-HE-j47" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4740.579710144928" y="760.71428571428567"/>
+            <point key="canvasLocation" x="5221" y="718"/>
         </scene>
         <!--Game Night Vote View Controller-->
         <scene sceneID="vJr-gD-8Wx">
@@ -901,6 +902,35 @@
                 <exit id="tsZ-Ye-jIp" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1763.7681159420292" y="2894.8660714285711"/>
+        </scene>
+        <!--Schedule Table View Controller-->
+        <scene sceneID="rz1-fk-Vez">
+            <objects>
+                <tableViewController id="yIY-Ic-pmN" customClass="ScheduleTableViewController" customModule="ValentineClub" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="ZFC-om-t1v">
+                        <rect key="frame" x="0.0" y="0.0" width="704" height="995.5"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="MeY-Jb-NHv">
+                                <rect key="frame" x="0.0" y="44.5" width="704" height="51.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MeY-Jb-NHv" id="Cmy-tX-JjC">
+                                    <rect key="frame" x="0.0" y="0.0" width="704" height="51.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="yIY-Ic-pmN" id="xpV-PU-5Z5"/>
+                            <outlet property="delegate" destination="yIY-Ic-pmN" id="Jcu-7c-nMu"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="LjV-Fv-BUM"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BuZ-a5-Pnn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5767" y="1564"/>
         </scene>
     </scenes>
     <resources>

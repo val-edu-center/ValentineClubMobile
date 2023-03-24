@@ -25,6 +25,8 @@
 		A35C87E9277E3233009B5788 /* ValentineClubUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35C87E8277E3233009B5788 /* ValentineClubUITestsLaunchTests.swift */; };
 		A38DF07E27C04CAD006D830A /* GameNightVoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A38DF07D27C04CAD006D830A /* GameNightVoteViewController.swift */; };
 		A39364E02806801D00498087 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39364DF2806801D00498087 /* UserService.swift */; };
+		A3AE6CF229CE57A3008ECC03 /* ScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AE6CF129CE57A3008ECC03 /* ScheduleCell.swift */; };
+		A3AE6CF429CE57E1008ECC03 /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AE6CF329CE57E1008ECC03 /* ScheduleTableViewController.swift */; };
 		A3BA776227D8309F00450D3F /* ErrorMessenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BA776127D8309F00450D3F /* ErrorMessenger.swift */; };
 		A3D08784278158DD00E178E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D08779278158DD00E178E6 /* AppDelegate.swift */; };
 		A3D08785278158DE00E178E6 /* TransactionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D0877A278158DD00E178E6 /* TransactionTableViewController.swift */; };
@@ -87,6 +89,8 @@
 		A35C87E8277E3233009B5788 /* ValentineClubUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValentineClubUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A38DF07D27C04CAD006D830A /* GameNightVoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameNightVoteViewController.swift; sourceTree = "<group>"; };
 		A39364DF2806801D00498087 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		A3AE6CF129CE57A3008ECC03 /* ScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCell.swift; sourceTree = "<group>"; };
+		A3AE6CF329CE57E1008ECC03 /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
 		A3BA776127D8309F00450D3F /* ErrorMessenger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessenger.swift; sourceTree = "<group>"; };
 		A3D08779278158DD00E178E6 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3D0877A278158DD00E178E6 /* TransactionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionTableViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +170,7 @@
 				A3D0877D278158DD00E178E6 /* TransactionCell.swift */,
 				A3DB442027BC778D0014979F /* RadioButtonTableViewCell.swift */,
 				A3DB442127BC778D0014979F /* RadioButtonTableViewCell.xib */,
+				A3AE6CF129CE57A3008ECC03 /* ScheduleCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -213,6 +218,7 @@
 				A3D08781278158DD00E178E6 /* BankViewController.swift */,
 				A32BEE3C278688E8002C4589 /* ConfirmationViewController.swift */,
 				A33EA2FA28337A210085BA81 /* BaseViewController.swift */,
+				A3AE6CF329CE57E1008ECC03 /* ScheduleTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -543,6 +549,7 @@
 				A3D9FB8A279E31AC00DE4688 /* GroupRoleViewController.swift in Sources */,
 				A39364E02806801D00498087 /* UserService.swift in Sources */,
 				A3BA776227D8309F00450D3F /* ErrorMessenger.swift in Sources */,
+				A3AE6CF429CE57E1008ECC03 /* ScheduleTableViewController.swift in Sources */,
 				A3E553D927E252DA00D92CD9 /* TransactionDetailsViewController.swift in Sources */,
 				A3D08786278158DE00E178E6 /* UserSelectViewController.swift in Sources */,
 				A32195E1278B9B1F0037AC3C /* AccountDao.swift in Sources */,
@@ -550,6 +557,7 @@
 				A3D9FB88279CEA2400DE4688 /* RootViewController.swift in Sources */,
 				A34FD033282D917000C939D9 /* CredentialService.swift in Sources */,
 				A3E310182798C2A700D87B73 /* HomeViewController.swift in Sources */,
+				A3AE6CF229CE57A3008ECC03 /* ScheduleCell.swift in Sources */,
 				A3D08789278158DE00E178E6 /* TransactionViewController.swift in Sources */,
 				A32BEE3D278688E8002C4589 /* ConfirmationViewController.swift in Sources */,
 				A3D9FB8C279E66E800DE4688 /* RoleMapper.swift in Sources */,
