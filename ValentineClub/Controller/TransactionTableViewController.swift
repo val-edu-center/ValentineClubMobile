@@ -94,7 +94,6 @@ extension  TransactionTableViewController {
         let cell = sender as! UITableViewCell
         let indexPath = tableView.indexPath(for: cell)!
         let transaction = transactions[indexPath.row]
-        let transactionType = transaction["transactionType"] as! String
         let transactionDetailsViewController = segue.destination as! TransactionDetailsViewController
         transactionDetailsViewController.transaction = transaction
         

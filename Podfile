@@ -6,9 +6,9 @@ target 'ValentineClub' do
   use_frameworks! 
 
   # Pods for ValentineClub
-
   pod 'Parse'
   pod 'Toast-Swift', '~> 5.0.1'
+  pod "AlamofireImage"
 
   target 'ValentineClubTests' do
     inherit! :search_paths

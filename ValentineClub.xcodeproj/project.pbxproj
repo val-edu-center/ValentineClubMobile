@@ -34,6 +34,9 @@
 		A3D0878B278158DE00E178E6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D08780278158DD00E178E6 /* LoginViewController.swift */; };
 		A3D0878C278158DE00E178E6 /* BankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D08781278158DD00E178E6 /* BankViewController.swift */; };
 		A3D0878D278158DE00E178E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D08782278158DD00E178E6 /* SceneDelegate.swift */; };
+		A3D4682D29D603B40004F63B /* ScheduleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D4682C29D603B40004F63B /* ScheduleViewCell.swift */; };
+		A3D4682F29D604390004F63B /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D4682E29D604390004F63B /* ScheduleTableViewController.swift */; };
+		A3D4683329D615430004F63B /* ScheduleDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D4683229D615430004F63B /* ScheduleDetailsViewController.swift */; };
 		A3D9FB88279CEA2400DE4688 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D9FB87279CEA2400DE4688 /* RootViewController.swift */; };
 		A3D9FB8A279E31AC00DE4688 /* GroupRoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D9FB89279E31AB00DE4688 /* GroupRoleViewController.swift */; };
 		A3D9FB8C279E66E800DE4688 /* RoleMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D9FB8B279E66E800DE4688 /* RoleMapper.swift */; };
@@ -96,6 +99,9 @@
 		A3D08780278158DD00E178E6 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A3D08781278158DD00E178E6 /* BankViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankViewController.swift; sourceTree = "<group>"; };
 		A3D08782278158DD00E178E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		A3D4682C29D603B40004F63B /* ScheduleViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewCell.swift; sourceTree = "<group>"; };
+		A3D4682E29D604390004F63B /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
+		A3D4683229D615430004F63B /* ScheduleDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleDetailsViewController.swift; sourceTree = "<group>"; };
 		A3D9FB87279CEA2400DE4688 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		A3D9FB89279E31AB00DE4688 /* GroupRoleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupRoleViewController.swift; sourceTree = "<group>"; };
 		A3D9FB8B279E66E800DE4688 /* RoleMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleMapper.swift; sourceTree = "<group>"; };
@@ -166,6 +172,7 @@
 				A3D0877D278158DD00E178E6 /* TransactionCell.swift */,
 				A3DB442027BC778D0014979F /* RadioButtonTableViewCell.swift */,
 				A3DB442127BC778D0014979F /* RadioButtonTableViewCell.xib */,
+				A3D4682C29D603B40004F63B /* ScheduleViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -213,6 +220,8 @@
 				A3D08781278158DD00E178E6 /* BankViewController.swift */,
 				A32BEE3C278688E8002C4589 /* ConfirmationViewController.swift */,
 				A33EA2FA28337A210085BA81 /* BaseViewController.swift */,
+				A3D4682E29D604390004F63B /* ScheduleTableViewController.swift */,
+				A3D4683229D615430004F63B /* ScheduleDetailsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -543,6 +552,7 @@
 				A3D9FB8A279E31AC00DE4688 /* GroupRoleViewController.swift in Sources */,
 				A39364E02806801D00498087 /* UserService.swift in Sources */,
 				A3BA776227D8309F00450D3F /* ErrorMessenger.swift in Sources */,
+				A3D4682F29D604390004F63B /* ScheduleTableViewController.swift in Sources */,
 				A3E553D927E252DA00D92CD9 /* TransactionDetailsViewController.swift in Sources */,
 				A3D08786278158DE00E178E6 /* UserSelectViewController.swift in Sources */,
 				A32195E1278B9B1F0037AC3C /* AccountDao.swift in Sources */,
@@ -551,12 +561,14 @@
 				A34FD033282D917000C939D9 /* CredentialService.swift in Sources */,
 				A3E310182798C2A700D87B73 /* HomeViewController.swift in Sources */,
 				A3D08789278158DE00E178E6 /* TransactionViewController.swift in Sources */,
+				A3D4683329D615430004F63B /* ScheduleDetailsViewController.swift in Sources */,
 				A32BEE3D278688E8002C4589 /* ConfirmationViewController.swift in Sources */,
 				A3D9FB8C279E66E800DE4688 /* RoleMapper.swift in Sources */,
 				A3D0878D278158DE00E178E6 /* SceneDelegate.swift in Sources */,
 				A33EA2FB28337A210085BA81 /* BaseViewController.swift in Sources */,
 				A35C87C8277E3230009B5788 /* SceneDelegate.swift in Sources */,
 				A3D08788278158DE00E178E6 /* TransactionCell.swift in Sources */,
+				A3D4682D29D603B40004F63B /* ScheduleViewCell.swift in Sources */,
 				A3D08785278158DE00E178E6 /* TransactionTableViewController.swift in Sources */,
 				A3D0878B278158DE00E178E6 /* LoginViewController.swift in Sources */,
 			);
