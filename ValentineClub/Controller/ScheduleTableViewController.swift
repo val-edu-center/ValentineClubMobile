@@ -22,7 +22,7 @@
          do {
              try schedules = scheduleQuery.findObjects()
          } catch {
-             print("Game Night retrival error: \(error.localizedDescription)")
+             print("Schedule retrival error: \(error.localizedDescription)")
          }
      }
 
