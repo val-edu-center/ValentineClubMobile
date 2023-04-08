@@ -13,9 +13,11 @@
      let scheduleCell = "ScheduleViewCell"
      let dateFormatter = DateFormatter()
      let todaysDate = Date()
+     let myCalendar = Calendar(identifier: .gregorian)
+     
 
      override func viewDidLoad() {
-         dateFormatter.dateFormat = "MM/dd/YY"
+         dateFormatter.dateFormat = "EEE MMM d"
 
          let scheduleQuery = PFQuery(className:"Schedule")
          scheduleQuery.order(byDescending: "scheduleDate")
@@ -33,13 +35,11 @@ extension ScheduleTableViewController {
     static let scheduleCell = "ScheduleViewCell"
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return schedules.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: scheduleCell, for: indexPath) as? ScheduleViewCell else { fatalError("Cell Not Found") }
-        // Configure the cell...
         let schedule = schedules[indexPath.row]
         let date = schedule["scheduleDate"] as! Date
         let scheduleDate =  dateFormatter.string(from: date)
@@ -49,6 +49,7 @@ extension ScheduleTableViewController {
             
         } else {
             cell.titleLabel.text = scheduleDate
+                
         }
         return cell
     }
