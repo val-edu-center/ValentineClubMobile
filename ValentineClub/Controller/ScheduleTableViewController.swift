@@ -59,12 +59,6 @@ extension ScheduleTableViewController {
         let schedule = schedules[indexPath.row]
         let scheduleDetailsViewController = segue.destination as! ScheduleDetailsViewController
         
-        
-        let date = schedule["scheduleDate"] as! Date
-        let scheduleDate = dateFormatter.string(from: date)
-        scheduleDetailsViewController.scheduleTitleString = scheduleDate
-        
-        
         let file = schedule["file"] as! PFFileObject
         scheduleDetailsViewController.scheduleImageUrl = file.url!
         
