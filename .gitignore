@@ -2,4 +2,5 @@ Podfile.lock
 Pods/
 *.xcuserstate
 .DS_Store
+Breakpoints_v2.xcbkptlist
 ValentineClub.xcworkspace/xcuserdata/valentine.xcuserdatad/UserInterfaceState.xcuserstate
