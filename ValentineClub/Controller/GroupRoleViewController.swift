@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Parse
 
 class GroupRoleViewController: UIViewController {
     
@@ -53,5 +54,11 @@ class GroupRoleViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-
+    
+    
+    @IBAction func onLogout(_ sender: Any) {
+        PFUser.logOut()
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
