@@ -15,7 +15,11 @@ class HomeViewController: UIViewController {
     
     var tapCounter: Int = 0
     override func viewDidLoad() {
+        let imageCount = 6
         super.viewDidLoad()
+        let randomInt = Int.random(in: 1..<(imageCount + 1))
+        frontImage.image = UIImage(named: "Front" + randomInt.description)
+    }
 
 //        // Do any additional setup after loading the view.
 //
@@ -25,8 +29,6 @@ class HomeViewController: UIViewController {
 //                frontImage.addGestureRecognizer(tapGesture)
 //                // make sure imageView can be interacted with by user
 //                frontImage.isUserInteractionEnabled = true
-    }
-    
     
 //    @objc func imageTapped(gesture: UIGestureRecognizer) {
 //            // if the tapped view is a UIImageView then set it to imageview
